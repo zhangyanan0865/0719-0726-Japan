@@ -1,252 +1,958 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Japan Itinerary · Osaka Kyoto Fuji Tokyo · 19–26 July 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan Travel Plan 2026 · 日本行程规划</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root{
-    --bg:#f4ede0; --surface:#faf6ef; --card:#fffdf9; --accent:#b5673a; --accent2:#d4884f;
-    --warm:#e8c99a; --text:#3b2e1e; --mid:#6b5740; --soft:#9b8672; --border:#e0d3c0; --border2:#cec0a8;
-    --note:#f7f2e8; --warn:#fff3eb; --warn-bd:#e8a87a; --green:#4e7c5f; --green-bg:#edf4f0; --green-bd:#b8d9c6;
-    --blue:#496f8f; --blue-bg:#eef4f8; --blue-bd:#b8ccda;
+
+  :root {
+    --bg:       #f4ede0;
+    --surface:  #faf6ef;
+    --card:     #fffdf9;
+    --accent:   #b5673a;
+    --accent2:  #d4884f;
+    --warm:     #e8c99a;
+    --text:     #3b2e1e;
+    --text-mid: #6b5740;
+    --text-soft:#9b8672;
+    --border:   #e0d3c0;
+    --border2:  #cec0a8;
+    --warn-bg:  #fff3eb;
+    --warn-bdr: #e8a87a;
+    --note-bg:  #f7f2e8;
+    --green:    #4e7c5f;
+    --green-bg: #edf4f0;
+    --green-bd: #b8d9c6;
+    --blue:     #486f8f;
+    --blue-bg:  #eef4f8;
+    --blue-bd:  #c7d7e2;
+    --purple:   #6b4fa0;
+    --purple-bg:#f0eaf8;
+    --purple-bd:#c9b8e4;
   }
-  body { background:var(--bg); color:var(--text); font-family:'Source Sans 3', sans-serif; line-height:1.55; font-size:16px; }
-  .header { background:var(--surface); border-bottom:2px solid var(--border2); padding:44px 60px 34px; }
-  .eyebrow { font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; font-weight:600; }
-  .title { font-family:'Lora', serif; font-size:38px; font-weight:500; line-height:1.15; margin-bottom:4px; }
-  .subtitle { color:var(--mid); font-weight:300; margin-bottom:26px; }
-  .chips { display:flex; flex-wrap:wrap; gap:10px; }
-  .chip { background:var(--card); border:1px solid var(--border2); border-radius:3px; padding:8px 16px; min-width:150px; }
-  .chip span { display:block; }
-  .chip .label { font-size:9px; letter-spacing:2.2px; text-transform:uppercase; color:var(--soft); }
-  .chip .value { font-size:14px; color:var(--text); font-weight:600; }
-  .strip { background:var(--warm); padding:10px 60px; color:var(--mid); font-size:13px; border-bottom:1px solid var(--border2); }
-  .strip strong { color:var(--accent); letter-spacing:.8px; }
-  .wrap { max-width:1120px; padding:34px 60px 60px; }
-  .section-head { display:flex; align-items:baseline; gap:14px; margin:34px 0 20px; }
-  .section-en { font-family:'Lora', serif; font-size:23px; color:var(--accent); font-weight:500; }
-  .section-cn { color:var(--soft); font-size:13px; }
-  .rule { flex:1; height:1px; background:linear-gradient(to right,var(--border2),transparent); }
-  .overview { background:var(--card); border:1px solid var(--border); border-radius:5px; padding:24px; }
-  .timeline { display:flex; overflow-x:auto; padding:8px 4px 12px; gap:0; }
-  .stop { min-width:132px; flex:1; text-align:center; position:relative; }
-  .dotrow { display:flex; align-items:center; margin-bottom:10px; }
-  .line { height:2px; background:var(--border2); flex:1; } .line.hide { background:transparent; }
-  .dot { width:14px; height:14px; border-radius:50%; background:var(--accent2); border:2px solid var(--accent); flex-shrink:0; }
-  .city { font-family:'Lora', serif; font-size:17px; font-weight:500; }
-  .city-cn { color:var(--soft); font-size:11px; margin:1px 0 6px; }
-  .stay { display:inline-block; background:var(--note); border:1px solid var(--border); border-radius:18px; padding:3px 11px; color:var(--accent); font-weight:700; font-size:12px; margin-bottom:5px; }
-  .dates { color:var(--soft); font-size:11px; line-height:1.6; }
-  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--border); border-radius:4px; overflow:hidden; }
-  th { background:var(--note); color:var(--soft); font-size:10px; letter-spacing:2.2px; text-transform:uppercase; padding:10px 14px; text-align:left; border-bottom:2px solid var(--border2); }
-  td { padding:12px 14px; border-bottom:1px solid var(--border); color:var(--mid); vertical-align:top; }
-  tr:last-child td { border-bottom:none; }
-  .date { color:var(--accent); font-weight:700; white-space:nowrap; }
-  .event { color:var(--text); font-weight:600; }
-  .muted { color:var(--soft); font-size:13px; }
-  .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-  .grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
-  .card { background:var(--card); border:1px solid var(--border); border-radius:5px; padding:20px 22px; }
-  .card h3 { font-family:'Lora', serif; color:var(--accent); font-size:18px; font-weight:500; margin-bottom:10px; }
-  .meta { display:grid; grid-template-columns:96px 1fr; gap:8px 12px; font-size:14px; }
-  .meta .label { color:var(--soft); text-transform:uppercase; letter-spacing:1.2px; font-size:10px; padding-top:3px; }
-  .meta .value { color:var(--mid); } .meta strong { color:var(--text); }
-  .price { display:inline-block; margin-top:10px; background:var(--warn); border:1px solid var(--warn-bd); color:var(--accent); border-radius:3px; padding:4px 9px; font-weight:700; font-size:13px; }
-  .tag { display:inline-block; border-radius:18px; padding:4px 11px; font-size:12px; font-weight:700; border:1px solid var(--border); background:var(--note); color:var(--accent); }
-  .tag.green { background:var(--green-bg); border-color:var(--green-bd); color:var(--green); }
-  .tag.blue { background:var(--blue-bg); border-color:var(--blue-bd); color:var(--blue); }
-  .tag.warn { background:var(--warn); border-color:var(--warn-bd); color:var(--accent); }
-  .day { background:var(--card); border:1px solid var(--border); border-radius:6px; margin-bottom:18px; overflow:hidden; }
-  .day-head { background:linear-gradient(90deg,var(--note),var(--card)); border-bottom:1px solid var(--border); padding:20px 24px; display:flex; justify-content:space-between; gap:18px; align-items:flex-start; }
-  .day-kicker { color:var(--accent); font-weight:800; font-size:12px; letter-spacing:2px; text-transform:uppercase; }
-  .day-title { font-family:'Lora', serif; font-size:24px; color:var(--text); line-height:1.2; margin:3px 0 4px; }
-  .day-sub { color:var(--mid); font-size:14px; }
-  .day-body { padding:18px 24px 22px; }
-  .step { display:grid; grid-template-columns:135px 1fr 185px; gap:16px; padding:14px 0; border-bottom:1px dashed var(--border); }
-  .step:last-child { border-bottom:none; }
-  .time { color:var(--accent); font-weight:800; } .time span { display:block; color:var(--soft); font-size:12px; font-weight:500; margin-top:2px; }
-  .maintext strong { color:var(--text); } .maintext { color:var(--mid); font-size:15px; }
-  .cost { background:var(--note); border:1px solid var(--border); border-radius:4px; padding:10px 12px; color:var(--mid); font-size:13px; }
-  .cost strong { color:var(--accent); display:block; font-size:14px; }
-  .notice { background:var(--warn); border:1px solid var(--warn-bd); border-radius:4px; padding:12px 14px; color:var(--mid); font-size:14px; margin-top:12px; }
-  .notice strong { color:var(--accent); }
-  .options { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px; }
-  .option { background:var(--note); border:1px solid var(--border); border-radius:5px; padding:14px 15px; }
-  .option.primary { background:var(--green-bg); border-color:var(--green-bd); }
-  .option h4 { color:var(--accent); font-size:15px; margin-bottom:6px; }
-  .option.primary h4 { color:var(--green); }
-  .option p { color:var(--mid); font-size:14px; }
-  .budget-card { background:var(--card); border:1px solid var(--border); padding:18px; border-radius:5px; }
-  .budget-card .num { font-family:'Lora', serif; color:var(--accent); font-size:25px; margin:3px 0 4px; }
-  .food-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
-  .food-item { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:13px 15px; color:var(--mid); font-size:14px; }
-  .food-item strong { color:var(--text); }
-  .footer { background:var(--surface); border-top:1px solid var(--border2); padding:17px 60px; color:var(--soft); display:flex; justify-content:space-between; font-size:12px; }
-  @media(max-width:760px){ .header,.strip,.wrap,.footer{padding-left:20px;padding-right:20px;} .grid,.grid-3,.options,.food-list{grid-template-columns:1fr;} .step{grid-template-columns:1fr;} .day-head{flex-direction:column;} }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--border2);
+    padding: 44px 60px 36px;
+  }
+  .header-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; font-weight: 600; }
+  .header-title { font-family: 'Lora', serif; font-size: 42px; font-weight: 500; color: var(--text); line-height: 1.1; margin-bottom: 6px; }
+  .header-title-cn { font-size: 16px; color: var(--text-mid); margin-bottom: 28px; font-weight: 300; }
+  .header-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { background: var(--card); border: 1px solid var(--border2); border-radius: 3px; padding: 7px 16px; font-size: 13px; color: var(--text-mid); display: flex; flex-direction: column; gap: 2px; }
+  .chip-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-soft); }
+  .chip-value { font-size: 14px; color: var(--text); font-weight: 600; }
+
+  .order-strip { background: var(--warm); padding: 10px 60px; display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--text-mid); border-bottom: 1px solid var(--border2); flex-wrap: wrap; }
+  .order-strip strong { color: var(--accent); font-size: 14px; letter-spacing: 1px; }
+
+  .overview-wrap {
+    background: var(--card);
+    border-bottom: 2px solid var(--border2);
+    padding: 36px 60px 40px;
+  }
+
+  .overview-title, .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .overview-title-en, .section-en { font-family: 'Lora', serif; font-size: 22px; font-weight: 500; color: var(--accent); }
+  .overview-title-cn, .section-cn { font-size: 13px; color: var(--text-soft); }
+  .section-rule { flex: 1; height: 1px; background: linear-gradient(to right, var(--border2), transparent); }
+
+  .timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .tl-stop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 120px;
+    flex: 1;
+  }
+  .tl-dot-row { display: flex; align-items: center; width: 100%; margin-bottom: 10px; }
+  .tl-line-left, .tl-line-right { flex: 1; height: 2px; background: var(--border2); }
+  .tl-line-left.hidden, .tl-line-right.hidden { background: transparent; }
+  .tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent2); border: 2px solid var(--accent); flex-shrink: 0; z-index: 1; }
+  .tl-dot.home { background: var(--warm); border-color: var(--accent2); }
+  .tl-dot.blue { background: var(--blue-bg); border-color: var(--blue); }
+  .tl-city-en { font-family: 'Lora', serif; font-size: 17px; font-weight: 500; color: var(--text); text-align: center; line-height: 1.2; }
+  .tl-city-cn { font-size: 11px; color: var(--text-soft); text-align: center; margin-top: 1px; margin-bottom: 6px; }
+  .tl-stay { background: var(--note-bg); border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: 12px; color: var(--accent); font-weight: 700; text-align: center; margin-bottom: 5px; white-space: nowrap; }
+  .tl-stay.green { background: var(--green-bg); border-color: var(--green-bd); color: var(--green); }
+  .tl-stay.blue { background: var(--blue-bg); border-color: var(--blue-bd); color: var(--blue); }
+  .tl-stay.purple { background: var(--purple-bg); border-color: var(--purple-bd); color: var(--purple); }
+  .tl-dates { font-size: 11px; color: var(--text-soft); text-align: center; line-height: 1.7; }
+  .tl-dates strong { color: var(--text-mid); }
+
+  .main { padding: 36px 60px 60px; max-width: 1160px; }
+  .section-head { margin-top: 36px; }
+
+  .grid { display: grid; gap: 16px; }
+  .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 22px 24px;
+  }
+  .card-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .card-title-en { font-family: 'Lora', serif; font-size: 19px; color: var(--text); font-weight: 500; }
+  .card-title-cn { font-size: 12px; color: var(--text-soft); }
+  .small-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-soft); font-weight: 700; }
+  .big-num { font-size: 28px; font-weight: 700; color: var(--accent); line-height: 1.1; }
+  .card p { color: var(--text-mid); font-size: 14px; margin-top: 6px; }
+  .muted { color: var(--text-soft); font-size: 12px; }
+  .em { color: var(--accent); font-weight: 700; }
+
+  .budget-card { border-top: 3px solid var(--accent2); }
+  .budget-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 14px; color: var(--text-mid); }
+  .budget-row:last-child { border-bottom: none; }
+  .budget-row strong { color: var(--text); }
+  .budget-total { background: var(--note-bg); border: 1px solid var(--border); border-radius: 3px; padding: 12px 14px; margin-top: 12px; color: var(--text); font-weight: 700; }
+
+  .schedule-table {
+    width: 100%;
+    margin-top: 8px;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .schedule-table thead tr { background: var(--note-bg); border-bottom: 2px solid var(--border2); }
+  .schedule-table th { padding: 10px 14px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-soft); font-weight: 700; text-align: left; }
+  .schedule-table td { padding: 13px 14px; font-size: 14px; color: var(--text-mid); border-bottom: 1px solid var(--border); vertical-align: top; }
+  .schedule-table tr:last-child td { border-bottom: none; }
+  .td-date { font-weight: 700; color: var(--accent); white-space: nowrap; font-size: 14px; }
+  .td-date-cn { font-size: 11px; color: var(--text-soft); font-weight: 400; display: block; margin-top: 2px; }
+  .td-event { font-weight: 600; color: var(--text); }
+  .td-event-cn { font-size: 12px; color: var(--text-soft); display: block; margin-top: 3px; line-height: 1.5; }
+  .stay-pill { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+  .stay-pill.green { background: var(--green-bg); border: 1px solid var(--green-bd); color: var(--green); }
+  .stay-pill.amber { background: var(--warn-bg); border: 1px solid var(--warn-bdr); color: var(--accent2); }
+  .stay-pill.blue { background: var(--blue-bg); border: 1px solid var(--blue-bd); color: var(--blue); }
+  .stay-pill.purple { background: var(--purple-bg); border: 1px solid var(--purple-bd); color: var(--purple); }
+
+  .route-card { position: relative; overflow: hidden; }
+  .route-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent2); }
+  .route-meta { display: grid; grid-template-columns: 110px 1fr; gap: 8px 14px; margin-top: 12px; font-size: 14px; }
+  .route-meta .label { color: var(--text-soft); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  .route-meta .value { color: var(--text-mid); }
+  .route-meta .value strong { color: var(--text); }
+
+  .hotel-card { border-top: 3px solid var(--green-bd); }
+  .hotel-name { font-size: 17px; color: var(--text); font-weight: 700; }
+  .hotel-meta { color: var(--text-mid); font-size: 13px; margin-top: 6px; }
+  .price-tag { display: inline-block; margin-top: 10px; background: var(--note-bg); border: 1px solid var(--border); color: var(--accent); border-radius: 3px; padding: 4px 10px; font-size: 12px; font-weight: 700; }
+
+  .food-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 0; overflow: hidden; }
+  .food-city { padding: 18px 22px; border-bottom: 1px solid var(--border); }
+  .food-city:last-child { border-bottom: none; }
+  .food-city h3 { font-family: 'Lora', serif; font-size: 19px; font-weight: 500; color: var(--accent); margin-bottom: 8px; }
+  .food-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; }
+  .food-item { background: var(--note-bg); border: 1px solid var(--border); border-radius: 3px; padding: 9px 12px; font-size: 13px; color: var(--text-mid); }
+  .food-item strong { color: var(--text); }
+  .food-note { margin-top: 12px; padding: 12px 14px; background: var(--warn-bg); border: 1px solid var(--warn-bdr); color: var(--text-mid); font-size: 13px; }
+
+
+
+  /* Focus day detailed route */
+  .focus-day { background: var(--card); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 24px; }
+  .focus-head { background: var(--note-bg); border-bottom: 2px solid var(--border2); padding: 18px 22px; display: flex; justify-content: space-between; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+  .focus-title { font-family: 'Lora', serif; font-size: 22px; color: var(--accent); font-weight: 500; }
+  .focus-sub { font-size: 13px; color: var(--text-soft); margin-top: 3px; }
+  .focus-badge { background: var(--warn-bg); border: 1px solid var(--warn-bdr); color: var(--accent); border-radius: 3px; padding: 6px 12px; font-size: 13px; font-weight: 600; }
+  .step-list { padding: 6px 22px 20px; }
+  .route-step { display: grid; grid-template-columns: 118px 1fr 170px; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: start; }
+  .route-step:last-child { border-bottom: none; }
+  .step-time { color: var(--accent); font-weight: 700; font-size: 15px; }
+  .step-time span { display:block; color: var(--text-soft); font-weight: 400; font-size: 11px; margin-top: 2px; }
+  .step-main { color: var(--text-mid); font-size: 14px; }
+  .step-main strong { color: var(--text); font-size: 15px; }
+  .step-main em { color: var(--accent); font-style: normal; font-weight: 600; }
+  .step-cost { background: var(--note-bg); border: 1px solid var(--border); border-radius: 3px; padding: 8px 10px; font-size: 13px; color: var(--text-mid); }
+  .step-cost strong { color: var(--text); }
+  .risk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 22px 22px; }
+  .risk-card { background: var(--warn-bg); border: 1px solid var(--warn-bdr); border-radius: 3px; padding: 12px 14px; font-size: 13px; color: var(--text-mid); }
+  .risk-card strong { color: var(--accent); display:block; margin-bottom: 4px; }
+  .cost-summary { background: var(--green-bg); border-top: 1px solid var(--green-bd); padding: 14px 22px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; color: var(--text-mid); }
+  .cost-summary strong { color: var(--green); }
+
+  .todo-list { list-style: none; display: grid; gap: 8px; }
+  .todo-list li { background: var(--card); border: 1px solid var(--border); padding: 10px 14px; border-radius: 3px; font-size: 14px; color: var(--text-mid); }
+  .todo-list strong { color: var(--text); }
+
+  .footer { border-top: 1px solid var(--border2); padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--text-soft); background: var(--surface); }
+  .page-tag { color: var(--accent); font-weight: 700; letter-spacing: 1px; }
+
+  @media (max-width: 820px) {
+    .header, .main, .footer, .order-strip, .overview-wrap { padding-left: 20px; padding-right: 20px; }
+    .header-title { font-size: 34px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .food-list { grid-template-columns: 1fr; }
+    .schedule-table { display: block; overflow-x: auto; }
+    .tl-stop { min-width: 92px; }
+    .route-meta { grid-template-columns: 92px 1fr; }
+    .route-step { grid-template-columns: 1fr; gap: 8px; }
+    .risk-grid { grid-template-columns: 1fr; }
+
+  }
+
+  .option-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px; }
+  .option-card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--accent2); border-radius: 4px; padding: 16px 18px; }
+  .option-card.primary { border-left-color: var(--green); }
+  .option-card.warn { border-left-color: var(--accent); background: var(--warn-bg); }
+  .option-title { font-weight: 700; color: var(--text); margin-bottom: 6px; font-size: 16px; }
+  .option-meta { color: var(--text-mid); font-size: 14px; line-height: 1.55; }
+  .placeholder-note { background: var(--note-bg); border: 1px dashed var(--border2); border-radius: 4px; padding: 14px 16px; color: var(--text-mid); font-size: 14px; margin-top: 12px; }
+  .mini-tag { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 8px; border-radius: 12px; border: 1px solid var(--border); background: var(--note-bg); color: var(--text-mid); font-size: 12px; }
+
 </style>
 </head>
 <body>
-  <div class="header">
-    <div class="eyebrow">Japan Travel · Shared Itinerary</div>
-    <div class="title">Osaka · Kyoto · Fuji · Tokyo</div>
-    <div class="subtitle">7月19日大阪会合后同行计划 · 19–26 July 2026</div>
-    <div class="chips">
-      <div class="chip"><span class="label">Period</span><span class="value">19–26 Jul 2026</span></div>
-      <div class="chip"><span class="label">Group</span><span class="value">4 people · 四人同行</span></div>
-      <div class="chip"><span class="label">Route</span><span class="value">Osaka → Kyoto → Fuji → Tokyo</span></div>
-      <div class="chip"><span class="label">Style</span><span class="value">City + Theme Parks + Fuji</span></div>
+
+<div class="header">
+  <div class="header-eyebrow">Japan Travel · July 2026 · Draft Framework</div>
+  <div class="header-title">Japan Itinerary Plan</div>
+  <div class="header-title-cn">日本行程规划初版 · 大阪 · 奈良 · 松江 · 京都 · 富士山 · 东京</div>
+  <div class="header-chips">
+    <div class="chip"><span class="chip-label">Travel Dates / 日本段</span><span class="chip-value">13 Jul – 26 Jul 2026</span></div>
+    <div class="chip"><span class="chip-label">Group / 人数</span><span class="chip-value">4 people · 4人</span></div>
+    <div class="chip"><span class="chip-label">Main Structure / 主结构</span><span class="chip-value">Conference + Kansai + Fuji + Tokyo</span></div>
+    <div class="chip"><span class="chip-label">Budget Target / 预算线</span><span class="chip-value">¥8,000–9,000 RMB / person</span></div>
+  </div>
+</div>
+
+<div class="order-strip">
+  📌 Status / 状态：<strong>Updated working version · 已更新执行版</strong> · Kyoto & Tokyo routes frozen · food pool inserted · 7/15、7/19、7/23交通已购票冻结
+</div>
+
+<div class="overview-wrap">
+  <div class="overview-title">
+    <div class="overview-title-en">Route Overview</div>
+    <div class="overview-title-cn">路线概览</div>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-stop">
+      <div class="tl-dot-row"><div class="tl-line-left hidden"></div><div class="tl-dot home"></div><div class="tl-line-right"></div></div>
+      <div class="tl-city-en">Osaka</div><div class="tl-city-cn">大阪</div>
+      <div class="tl-stay green">13–15 Jul</div>
+      <div class="tl-dates">Arrival<br><strong>KIX 20:30</strong></div>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot-row"><div class="tl-line-left"></div><div class="tl-dot blue"></div><div class="tl-line-right"></div></div>
+      <div class="tl-city-en">Nara</div><div class="tl-city-cn">奈良</div>
+      <div class="tl-stay blue">Day trip</div>
+      <div class="tl-dates"><strong>14 Jul</strong><br>return Osaka</div>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot-row"><div class="tl-line-left"></div><div class="tl-dot"></div><div class="tl-line-right"></div></div>
+      <div class="tl-city-en">Matsue</div><div class="tl-city-cn">松江</div>
+      <div class="tl-stay purple">15–19 Jul</div>
+      <div class="tl-dates">Conference<br><strong>4 nights</strong></div>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot-row"><div class="tl-line-left"></div><div class="tl-dot"></div><div class="tl-line-right"></div></div>
+      <div class="tl-city-en">Osaka</div><div class="tl-city-cn">大阪</div>
+      <div class="tl-stay green">19–21 Jul</div>
+      <div class="tl-dates">USJ<br><strong>20 Jul</strong></div>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot-row"><div class="tl-line-left"></div><div class="tl-dot"></div><div class="tl-line-right"></div></div>
+      <div class="tl-city-en">Kyoto</div><div class="tl-city-cn">京都</div>
+      <div class="tl-stay green">21–23 Jul</div>
+      <div class="tl-dates">City walk<br><strong>2 nights</strong></div>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot-row"><div class="tl-line-left"></div><div class="tl-dot blue"></div><div class="tl-line-right"></div></div>
+      <div class="tl-city-en">Fuji</div><div class="tl-city-cn">河口湖</div>
+      <div class="tl-stay blue">Transit</div>
+      <div class="tl-dates"><strong>23 Jul</strong><br>light visit</div>
+    </div>
+    <div class="tl-stop">
+      <div class="tl-dot-row"><div class="tl-line-left"></div><div class="tl-dot home"></div><div class="tl-line-right hidden"></div></div>
+      <div class="tl-city-en">Tokyo</div><div class="tl-city-cn">东京</div>
+      <div class="tl-stay green">23–26 Jul</div>
+      <div class="tl-dates">Disney<br><strong>25 Jul</strong></div>
     </div>
   </div>
-  <div class="strip">📌 Core plan: <strong>19 Jul Osaka meet-up · 23 Jul Kawaguchiko transfer day · 26 Jul HND/NRT airport split</strong></div>
+</div>
 
-  <div class="wrap">
-    <div class="section-head"><div class="section-en">Journey Overview</div><div class="section-cn">行程总览</div><div class="rule"></div></div>
-    <div class="overview">
-      <div class="timeline">
-        <div class="stop"><div class="dotrow"><div class="line hide"></div><div class="dot"></div><div class="line"></div></div><div class="city">Osaka</div><div class="city-cn">大阪会合</div><div class="stay">2 nights</div><div class="dates">19–21 Jul<br><strong>USJ + city</strong></div></div>
-        <div class="stop"><div class="dotrow"><div class="line"></div><div class="dot"></div><div class="line"></div></div><div class="city">Kyoto</div><div class="city-cn">京都</div><div class="stay">2 nights</div><div class="dates">21–23 Jul<br><strong>full-day city route</strong></div></div>
-        <div class="stop"><div class="dotrow"><div class="line"></div><div class="dot"></div><div class="line"></div></div><div class="city">Kawaguchiko</div><div class="city-cn">河口湖</div><div class="stay">day stop</div><div class="dates">23 Jul<br><strong>12:50–17:00</strong></div></div>
-        <div class="stop"><div class="dotrow"><div class="line"></div><div class="dot"></div><div class="line"></div></div><div class="city">Tokyo</div><div class="city-cn">东京</div><div class="stay">3 nights</div><div class="dates">23–26 Jul<br><strong>city + Disney</strong></div></div>
-        <div class="stop"><div class="dotrow"><div class="line"></div><div class="dot"></div><div class="line hide"></div></div><div class="city">Airports</div><div class="city-cn">机场分流</div><div class="stay">HND / NRT</div><div class="dates">26 Jul<br><strong>2 + 2 split</strong></div></div>
-      </div>
+<div class="main">
+
+  <div class="section-head">
+    <div class="section-en">Budget Frame</div>
+    <div class="section-cn">初步预算框架</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card budget-card">
+      <div class="small-label">Normal travel budget</div>
+      <div class="big-num">¥8,000–9,000</div>
+      <p>正常吃喝、正常游玩、两个乐园、适量纪念品的现实预算线，折合约 €1,015–1,145 / 人。</p>
     </div>
-
-    <div class="section-head"><div class="section-en">Daily Schedule</div><div class="section-cn">日期与住宿</div><div class="rule"></div></div>
-    <table>
-      <thead><tr><th>Date</th><th>Plan</th><th>Transport</th><th>Accommodation</th></tr></thead>
-      <tbody>
-        <tr><td class="date">19 Jul · Sun</td><td><span class="event">Osaka meet-up · 大阪会合</span><br><span class="muted">中午前后在大阪梅田/市区会合，下午入住九条南日式民宿，晚上大阪市区轻量活动。</span></td><td>梅田 → 九条南 / 西九条方向，市内交通或短程打车</td><td>九条南日式民宿</td></tr>
-        <tr><td class="date">20 Jul · Mon</td><td><span class="event">Universal Studios Japan</span><br><span class="muted">整日 USJ，门票预算已单列，园区餐饮与纪念品单独控制。</span></td><td>九条/西九条 → Universal City，JR/地铁短程</td><td>九条南日式民宿</td></tr>
-        <tr><td class="date">21 Jul · Tue</td><td><span class="event">Osaka → Kyoto</span><br><span class="muted">上午或中午转移至京都，入住四条乌丸，下午安排京都市区轻量游。</span></td><td>阪急京都线：大阪梅田 → 乌丸</td><td>相铁 FRESA INN 京都四条乌丸</td></tr>
-        <tr><td class="date">22 Jul · Wed</td><td><span class="event">Kyoto full day</span><br><span class="muted">京都完整游览日。建议使用地下铁・巴士一日券，路线以伏见稻荷、清水寺、二年坂三年坂、祇园、鸭川为主。</span></td><td>京都市地铁 + 公交，一日券 ¥1100 JPY</td><td>相铁 FRESA INN 京都四条乌丸</td></tr>
-        <tr><td class="date">23 Jul · Thu</td><td><span class="event">Kyoto → Mishima → Kawaguchiko → Tokyo</span><br><span class="muted">全程最复杂交通日，按已冻结方案执行。三岛 11:20 巴士与河口湖傍晚回东京巴士为核心。</span></td><td>京都地铁 + 新干线 + 富士急巴士 + 高速巴士 + 短程打车</td><td>N+ Hotel Tokyo Nihonbashi</td></tr>
-        <tr><td class="date">24 Jul · Fri</td><td><span class="event">Tokyo city day</span><br><span class="muted">东京市区游，建议安排轻量街区路线，兼顾购物、咖啡甜品和休息。</span></td><td>东京地铁 / 都营地铁 / JR，刷 IC 卡或可用线路尝试 Visa touch</td><td>N+ Hotel Tokyo Nihonbashi</td></tr>
-        <tr><td class="date">25 Jul · Sat</td><td><span class="event">Tokyo Disney Resort</span><br><span class="muted">两种方案：极限一日双园，或主玩 Disneyland。按当日体力和票种确认执行。</span></td><td>东京市区 → 舞浜；园区间移动见详细模块</td><td>N+ Hotel Tokyo Nihonbashi</td></tr>
-        <tr><td class="date">26 Jul · Sun</td><td><span class="event">Airport split</span><br><span class="muted">四人分流：2人前往羽田，2人前往成田。统一从日本桥/TCAT 区域组织出发。</span></td><td>T-CAT → HND / NRT Airport Limousine Bus</td><td>—</td></tr>
-      </tbody>
-    </table>
-
-    <div class="section-head"><div class="section-en">Accommodation</div><div class="section-cn">住宿安排</div><div class="rule"></div></div>
-    <div class="grid">
-      <div class="card"><h3>Osaka · 九条南日式民宿</h3><div class="meta"><div class="label">Date</div><div class="value">7/19–7/21 · 2 nights</div><div class="label">Room</div><div class="value">整套 2 居室，4 张榻榻米，约 60㎡</div><div class="label">Address</div><div class="value">大阪市西区九条南 3-8-2</div></div><div class="price">个人承担 ¥247.48 RMB，约 €31.5</div></div>
-      <div class="card"><h3>Kyoto · 相铁 FRESA INN 京都四条乌丸</h3><div class="meta"><div class="label">Date</div><div class="value">7/21–7/23 · 2 nights</div><div class="label">Room</div><div class="value">2 间双床房</div><div class="label">Address</div><div class="value">Shimogyo Ward, Dojishacho, 160, Kyoto</div></div><div class="price">个人承担 ¥390.30 RMB，约 €49.6</div></div>
-      <div class="card"><h3>Tokyo · N+ Hotel Tokyo Nihonbashi</h3><div class="meta"><div class="label">Date</div><div class="value">7/23–7/26 · 3 nights</div><div class="label">Room</div><div class="value">2 间双床房，每间约 11㎡</div><div class="label">Address</div><div class="value">Nihonbashi Hamacho, 2-23-8, Chuo-ku, Tokyo</div></div><div class="price">个人承担 ¥775.20 RMB，约 €98.5</div></div>
-      <div class="card"><h3>Accommodation Total · 住宿合计</h3><p class="muted">覆盖 7/19–7/26 共 7 晚同行住宿。</p><div class="price">约 ¥1,413 RMB / 人，约 €180 / 人</div></div>
+    <div class="card budget-card">
+      <div class="small-label">Accommodation fixed</div>
+      <div class="big-num">≈ ¥1,735</div>
+      <p>个人住宿支出，不含松江段。松江住宿由会议/老板相关安排支付，不计入个人住宿总额。</p>
     </div>
-
-    <div class="section-head"><div class="section-en">Daily Detail Modules</div><div class="section-cn">每日细化交通与执行安排</div><div class="rule"></div></div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 01 · 19 Jul</div><div class="day-title">Osaka Meet-up · 大阪会合</div><div class="day-sub">四人于大阪会合，下午入住九条南日式民宿，晚上安排大阪市区轻量活动。</div></div><span class="tag green">Meet-up day</span></div>
-      <div class="day-body">
-        <div class="step"><div class="time">12:00–13:00<span>Meet-up window</span></div><div class="maintext"><strong>大阪梅田 / 大阪市区会合</strong><br>主集合区域建议放在大阪梅田或住宿附近。当天重点是会合、行李整理和入住，不安排太重的景点。</div><div class="cost"><strong>市内短程</strong>按实际交通方式 A，约 ¥200–500 JPY / 人。</div></div>
-        <div class="step"><div class="time">Afternoon<span>Check-in</span></div><div class="maintext"><strong>前往九条南日式民宿</strong><br>住宿靠九条/西九条方向，适合第二天去 USJ。若带行李且多人同行，短程打车可作为备选。</div><div class="cost"><strong>住宿已订</strong>个人承担约 ¥247.48 RMB。</div></div>
-        <div class="step"><div class="time">Evening<span>Osaka light route</span></div><div class="maintext"><strong>道顿堀 / 心斋桥 / 难波晚餐</strong><br>当天以晚餐和轻量逛街为主。大阪烧、章鱼烧、串烧或拉面可从美食池中挑选。</div><div class="cost"><strong>餐饮另计</strong>建议 ¥2500–5000 JPY / 人视餐厅而定。</div></div>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 02 · 20 Jul</div><div class="day-title">Universal Studios Japan · 大阪环球影城</div><div class="day-sub">整日乐园日。交通简单，预算重点在门票、园区餐饮和纪念品。</div></div><span class="tag warn">Theme park</span></div>
-      <div class="day-body">
-        <div class="step"><div class="time">Morning<span>Hotel → USJ</span></div><div class="maintext"><strong>九条南 / 西九条 → Universal City</strong><br>从住宿出发前往 USJ。通常经西九条转 JR 梦咲线到 Universal City。当天建议早出发，避免入园排队浪费时间。</div><div class="cost"><strong>约 ¥200–400 JPY / 人 / 单程</strong>刷 IC 卡即可。</div></div>
-        <div class="step"><div class="time">Full day<span>USJ</span></div><div class="maintext"><strong>环球影城整日游</strong><br>重点预留哈利波特、任天堂、过山车/热门项目、夜间氛围和周边商店。快速通道不写入基础预算，若购买需单独确认。</div><div class="cost"><strong>门票 ¥463 RMB / 人</strong>园区餐饮与周边另计。</div></div>
-        <div class="step"><div class="time">Evening<span>Return</span></div><div class="maintext"><strong>Universal City → 民宿</strong><br>闭园后人流较大，按现场排队情况返回。若太累可考虑短程打车，但基础方案仍按公共交通。</div><div class="cost"><strong>约 ¥200–400 JPY / 人 / 单程</strong>现金流预留。</div></div>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 03 · 21 Jul</div><div class="day-title">Osaka → Kyoto · 大阪转京都</div><div class="day-sub">从大阪九条南民宿转移至京都四条乌丸。交通便宜稳定，使用阪急京都线。</div></div><span class="tag blue">Transfer</span></div>
-      <div class="day-body">
-        <div class="step"><div class="time">Morning<span>Check-out</span></div><div class="maintext"><strong>九条南民宿 → 大阪梅田 / Osaka-Umeda</strong><br>从住宿带行李前往阪急大阪梅田站。大阪市内段根据实时导航选择地铁/JR/短程打车。</div><div class="cost"><strong>市内短程</strong>约 ¥250–500 JPY / 人。</div></div>
-        <div class="step"><div class="time">Midday<span>Hankyu Kyoto Line</span></div><div class="maintext"><strong>大阪梅田 → 乌丸 / Karasuma</strong><br>乘阪急京都线到乌丸站，住宿在四条乌丸区域，抵达后步行或短程移动到酒店。</div><div class="cost"><strong>约 ¥410 JPY / 人</strong>刷 IC 卡；若现场支持 Visa touch 可尝试。</div></div>
-        <div class="step"><div class="time">Afternoon<span>Kyoto check-in</span></div><div class="maintext"><strong>相铁 FRESA INN 京都四条乌丸</strong><br>入住后可安排四条、锦市场、鸭川、祇园一带轻量路线，避免为第二天京都完整游消耗过多体力。</div><div class="cost"><strong>住宿已订</strong>个人承担约 ¥390.30 RMB。</div></div>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 04 · 22 Jul</div><div class="day-title">Kyoto Full Day · 京都一日游</div><div class="day-sub">京都完整游览日。以公交+地铁组织路线，建议购买地下铁・巴士一日券。</div></div><span class="tag green">City route</span></div>
-      <div class="day-body">
-        <div class="step"><div class="time">Morning<span>Fushimi Inari</span></div><div class="maintext"><strong>四条乌丸 → 伏见稻荷</strong><br>早上先去伏见稻荷，避开正午人流。若坚持使用一日券，路线以地铁+公交组织；若选择 JR/京阪电车则该段不由一日券覆盖。</div><div class="cost"><strong>一日券 ¥1100 JPY / 人</strong>若坐 5 次左右基本回本。</div></div>
-        <div class="step"><div class="time">Late morning<span>Kiyomizu area</span></div><div class="maintext"><strong>清水寺 / 二年坂三年坂</strong><br>从伏见稻荷转往清水寺区域。清水寺、二年坂三年坂、八坂塔一带以步行为主，适合拍照和吃小食。</div><div class="cost"><strong>门票另计</strong>清水寺等现场支付。</div></div>
-        <div class="step"><div class="time">Afternoon<span>Gion / Kamo River</span></div><div class="maintext"><strong>祇园 → 鸭川 → 四条乌丸</strong><br>下午走祇园、花见小路、鸭川一带，傍晚回四条乌丸附近吃饭。若当天体力好，可增加二条城或金阁寺等远一点的点。</div><div class="cost"><strong>餐饮另计</strong>晚餐按餐厅选择控制。</div></div>
-        <div class="notice"><strong>京都交通原则：</strong>7/22 是唯一适合买 Kyoto Subway & Bus 1-Day Pass 的日子。若当天坐公交/地铁 5 次以上，这张 ¥1100 JPY 一日券更省心；若临时改成大量 JR/京阪/阪急，则直接刷 IC 卡更灵活。</div>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 05 · 23 Jul</div><div class="day-title">Kyoto → Mishima → Kawaguchiko → Tokyo</div><div class="day-sub">全程最复杂交通日，按冻结方案执行。先锁两段大巴，再倒推新干线。</div></div><span class="tag warn">Core transfer day</span></div>
-      <div class="day-body">
-        <div class="step"><div class="time">07:15–07:30<span>Hotel departure</span></div><div class="maintext"><strong>相铁 FRESA INN 京都四条乌丸 → 四条站 → 京都站</strong><br>从酒店出发，经京都市营地铁乌丸线前往京都站。带行李，建议预留 35–45 分钟完成步行、进站和找新干线入口。</div><div class="cost"><strong>约 ¥220 JPY / 人</strong>刷 IC 卡。</div></div>
-        <div class="step"><div class="time">08:00–08:30<span>Shinkansen</span></div><div class="maintext"><strong>京都站 → 三岛站 / Mishima</strong><br>乘东海道新干线，目标坐 08:00–08:30 左右从京都出发的 Hikari 或 Kodama。必须确认车次停靠三岛 / Mishima / 三島，不是所有东京方向新干线都停三岛。可在 7/22 到京都站线下买好，或使用 SmartEX/Klook/Trip。</div><div class="cost"><strong>约 ¥10,780 JPY / 人</strong>自由席可行；指定席更省心。</div></div>
-        <div class="step"><div class="time">10:15–10:45<span>Mishima arrival</span></div><div class="maintext"><strong>三岛站 → 南口 2号线巴士站</strong><br>抵达三岛后从南口出站，找到 2号线 / Platform 2。预留 30–45 分钟换乘，先上厕所，整理行李，准备纸质/电子巴士票。</div><div class="cost"><strong>换乘缓冲</strong>不安排额外活动。</div></div>
-        <div class="step"><div class="time">11:20–12:50<span>Fujikyuko Bus 0009</span></div><div class="maintext"><strong>三岛站南口 2号线 → 河口湖站</strong><br>富士急行巴士，特快三岛/河口湖 Liner。11:20 从三岛站南口出发，12:25 经过富士山山中湖，12:40 富士急乐园，12:50 抵达河口湖站。山中湖只是中途站，终点选择河口湖站即可。</div><div class="cost"><strong>¥2,500 JPY / 人</strong>SEKITORI 订票；无厕所，座位可选。</div></div>
-        <div class="step"><div class="time">12:50–17:00<span>Kawaguchiko stay</span></div><div class="maintext"><strong>河口湖轻量游览</strong><br>抵达后先寄存行李，再安排午饭、湖边、天上山缆车或一个视野点。当天不加入忍野八海、山中湖或过远景点，避免影响傍晚回东京。</div><div class="cost"><strong>现场预算</strong>寄存、午餐、缆车/小交通另计。</div></div>
-        <div class="step"><div class="time">17:00 / 17:30<span>Highway bus</span></div><div class="maintext"><strong>河口湖站 → 东京站日本桥口</strong><br>优先订 17:00 或 17:30 左右出发的高速巴士，目标到东京站日本桥口。不要优先选新宿方向，因为东京住宿在日本桥浜町一带。</div><div class="cost"><strong>约 ¥2,200–3,000 JPY / 人</strong>提前订票。</div></div>
-        <div class="step"><div class="time">Night<span>Tokyo arrival</span></div><div class="maintext"><strong>东京站日本桥口 → N+ Hotel Tokyo Nihonbashi</strong><br>当天交通强度很高，抵达东京后建议直接打车到酒店，4 人分摊短程打车比拖行李换乘地铁更省心。</div><div class="cost"><strong>打车分摊</strong>按现场价格 A。</div></div>
-        <div class="notice"><strong>7/23 执行顺序：</strong>先订三岛 11:20 → 河口湖 12:50 巴士，再订河口湖 → 东京站日本桥口傍晚巴士，最后倒推京都 → 三岛新干线。核心交通预算约 ¥15,700–16,500 JPY / 人，不含现场寄存、缆车、餐饮与东京短程打车。</div>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 06 · 24 Jul</div><div class="day-title">Tokyo City Day · 东京市区一日</div><div class="day-sub">前一天交通强度高，东京第一天建议轻量化，保留购物、街区和咖啡甜品时间。</div></div><span class="tag green">Flexible city day</span></div>
-      <div class="day-body">
-        <div class="options">
-          <div class="option primary"><h4>Option A · 轻量经典线</h4><p>浅草 / 上野 / 秋叶原 / 银座或日本桥周边，根据体力选择 2–3 个区域，不做跨城式暴走。</p></div>
-          <div class="option"><h4>Option B · 购物街区线</h4><p>涩谷 / 表参道 / 原宿 / 新宿中选择一条主线，晚餐后回日本桥。若当天坐地铁很多，可评估 Tokyo Subway Ticket。</p></div>
-        </div>
-        <div class="step"><div class="time">All day<span>Tokyo transit</span></div><div class="maintext"><strong>东京地铁 / 都营地铁 / JR / 私铁组合</strong><br>住日本桥浜町，东京市区交通弹性高。默认刷 IC 卡；如果遇到支持 Visa touch 的都营地铁、京急、东急、京王、小田急、京成等线路，可尝试 Apple Pay Visa。</div><div class="cost"><strong>约 ¥800–1,500 JPY / 人 / 日</strong>视移动次数而定。</div></div>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 07 · 25 Jul</div><div class="day-title">Tokyo Disney Resort · 东京迪士尼</div><div class="day-sub">保留两种执行方案：极限一日双园，或主玩 Tokyo Disneyland。</div></div><span class="tag warn">Disney day</span></div>
-      <div class="day-body">
-        <div class="options">
-          <div class="option"><h4>Option A · 极限 1 天 2 园</h4><p>预算暂记 <strong>¥781 RMB / 人</strong>。上午/下午按票种与预约情况在 Disneyland 与 DisneySea 之间切换。两个园之间通过 Disney Resort Line 或园区交通移动，另预留少量现场交通与时间成本。该方案强度高，更适合想“两个园都打卡”的情况。</p></div>
-          <div class="option primary"><h4>Option B · 主玩 Tokyo Disneyland</h4><p>预算暂记 <strong>¥457 RMB / 人</strong>。全天集中在 Land，节奏更稳定，更适合正常游玩、看巡游/烟花、买纪念品和控制体力。</p></div>
-        </div>
-        <div class="step"><div class="time">Morning<span>Hotel → Maihama</span></div><div class="maintext"><strong>日本桥 / 人形町 / 八丁堀方向 → 舞浜站</strong><br>从东京住宿出发前往舞浜。通常经东京站或八丁堀转 JR 京叶线。当天为周六，建议早出门。</div><div class="cost"><strong>约 ¥400–700 JPY / 人 / 单程</strong>刷 IC 卡。</div></div>
-        <div class="step"><div class="time">Full day<span>Disney Resort</span></div><div class="maintext"><strong>乐园游玩 + 纪念品预算</strong><br>纪念品建议单独设预算，避免和餐饮混在一起。推荐每个乐园 1 个主纪念品 + 1–2 个小物，若选择双园则控制购买节奏。</div><div class="cost"><strong>门票 ¥457 / ¥781 RMB</strong>餐饮、周边另计。</div></div>
-      </div>
-    </div>
-
-    <div class="day">
-      <div class="day-head"><div><div class="day-kicker">Day 08 · 26 Jul</div><div class="day-title">Airport Split · 羽田 / 成田机场分流</div><div class="day-sub">四人从东京分别出发：2 人去羽田，2 人去成田。统一从日本桥附近组织到 T-CAT。</div></div><span class="tag blue">Departure day</span></div>
-      <div class="day-body">
-        <div class="step"><div class="time">Morning<span>Hotel → T-CAT</span></div><div class="maintext"><strong>N+ Hotel Tokyo Nihonbashi → T-CAT</strong><br>酒店到 T-CAT 步行约 9 分钟 / 600m，也可根据行李和天气短程打车。两组在 T-CAT 分别乘机场大巴。</div><div class="cost"><strong>步行 / 短程打车</strong>按现场情况决定。</div></div>
-        <div class="step"><div class="time">HND group<span>2 people</span></div><div class="maintext"><strong>T-CAT → 羽田机场 HND</strong><br>机场大巴直达羽田，适合带行李。建议根据航班时间提前一天确认班次，发车前 15–20 分钟到 T-CAT。</div><div class="cost"><strong>约 ¥1,000 JPY / 人</strong>2 人去羽田。</div></div>
-        <div class="step"><div class="time">NRT group<span>2 people</span></div><div class="maintext"><strong>T-CAT → 成田机场 NRT</strong><br>机场大巴直达成田，车程更长，需比羽田组更早出发。根据航站楼和航班时间确认班次。</div><div class="cost"><strong>约 ¥3,100 JPY / 人</strong>2 人去成田。</div></div>
-      </div>
-    </div>
-
-    <div class="section-head"><div class="section-en">Budget Framework</div><div class="section-cn">7月19日起个人预算框架</div><div class="rule"></div></div>
-    <div class="grid-3">
-      <div class="budget-card"><div class="muted">Accommodation</div><div class="num">≈ ¥1,413 RMB</div><p class="muted">大阪2晚 + 京都2晚 + 东京3晚。</p></div>
-      <div class="budget-card"><div class="muted">Transport</div><div class="num">≈ ¥850–1,100 RMB</div><p class="muted">含大阪/京都/东京小交通、7/23 河口湖大交通、机场分流；不含现场打车大幅增加。</p></div>
-      <div class="budget-card"><div class="muted">Theme Parks</div><div class="num">¥920 / ¥1,244 RMB</div><p class="muted">USJ + Disneyland 主园；若迪士尼双园则按 ¥781 RMB 方案计。</p></div>
-      <div class="budget-card"><div class="muted">Food</div><div class="num">≈ ¥1,200–1,800 RMB</div><p class="muted">正常吃喝，含乐园日和东京/京都咖啡甜品。</p></div>
-      <div class="budget-card"><div class="muted">Souvenirs</div><div class="num">≈ ¥500–1,200 RMB</div><p class="muted">乐园周边、手信、小物单独控制。</p></div>
-      <div class="budget-card"><div class="muted">Total Reference</div><div class="num">≈ ¥5,200–7,000 RMB</div><p class="muted">从 7/19 起正常玩预算。双园、购物和临时打车会推高上限。</p></div>
-    </div>
-
-    <div class="section-head"><div class="section-en">Food Pool</div><div class="section-cn">美食与餐饮备选</div><div class="rule"></div></div>
-    <div class="food-list">
-      <div class="food-item"><strong>千房 Chibo</strong><br>大阪烧，适合大阪市区晚餐。</div>
-      <div class="food-item"><strong>福太郎 Fukutarou</strong><br>大阪烧 / 炒面，朋友推荐，梅田或本店可选。</div>
-      <div class="food-item"><strong>萬両 まんりょう</strong><br>心斋桥附近大阪烧/铁板烧备选，牛筋大阪烧、炒面、蒜香鸡腿肉。</div>
-      <div class="food-item"><strong>踊りだこ 道頓堀店 / 本家大たこ</strong><br>章鱼烧备选，适合道顿堀小吃线。</div>
-      <div class="food-item"><strong>博多串焼き バッテンよかとぉ アメリカ村店</strong><br>串烧，推荐菜含猪舌根。</div>
-      <div class="food-item"><strong>宮田麺児</strong><br>心斋桥/道顿堀附近蘸面。</div>
-      <div class="food-item"><strong>黒毛和牛焼肉 道頓堀みつる 心斎橋総店</strong><br>黑毛和牛烧肉，适合作为大阪较正式一餐。</div>
-      <div class="food-item"><strong>HARBS / Strawberry Mania</strong><br>甜品备选，水果千层或草莓甜品。</div>
-      <div class="food-item"><strong>Nonkiya / のんきや</strong><br>通天阁附近关东煮老店备选。</div>
-      <div class="food-item"><strong>东京 / 京都餐饮</strong><br>以当天路线附近为准，优先选择交通顺路、排队可控、预算合理的店。</div>
+    <div class="card budget-card">
+      <div class="small-label">Transport after reimbursement</div>
+      <div class="big-num">≈ ¥1,500–2,000</div>
+      <p>大阪⇄松江高速巴士已购电子票，去程4人总价 ¥20,400，回程3人总价 ¥18,000；后续按可报销交通处理，个人最终自费预算中可单独剔除，但需先垫付现金流。</p>
     </div>
   </div>
 
-  <div class="footer"><div>Japan Itinerary · 19–26 July 2026 · Osaka Kyoto Fuji Tokyo</div><div>SHARE VERSION / DETAILED</div></div>
+  <div class="grid grid-2" style="margin-top:16px;">
+    <div class="card budget-card">
+      <div class="card-title"><div class="card-title-en">Cost Structure</div><div class="card-title-cn">费用结构</div></div>
+      <div class="budget-row"><span>住宿 Accommodation</span><strong>≈ ¥1,735 / 人</strong></div>
+      <div class="budget-row"><span>交通 Transport</span><strong>≈ ¥1,500–2,000 / 人</strong></div>
+      <div class="budget-row"><span>USJ + Disney 门票</span><strong>≈ ¥920 / 人</strong></div>
+      <div class="budget-row"><span>正常吃喝 Food & drinks</span><strong>≈ ¥1,800–2,500 / 人</strong></div>
+      <div class="budget-row"><span>纪念品 / 小购物</span><strong>≈ ¥800–1,500 / 人</strong></div>
+      <div class="budget-total">心理线：目标 ¥8,000；正常安全线 ¥9,000；尽量不超过 ¥10,000。</div>
+    </div>
+    <div class="card budget-card">
+      <div class="card-title"><div class="card-title-en">Planning Logic</div><div class="card-title-cn">规划逻辑</div></div>
+      <p><span class="em">大交通已锁定：</span>7/23 京都→三岛新干线、三岛→河口湖巴士、河口湖→东京巴士属于同一大交通模块，均已购票/订票；现场重点是提前保存 QR-Ticket / QR code / 手机乘车票。</p>
+      <p><span class="em">小交通灵活刷卡：</span>南海、近铁、阪急、地铁、JR 短途等，以 Suica / ICOCA 或 Apple Pay Visa touch 为主。</p>
+      <p><span class="em">乐园日单独预算：</span>USJ 和东京迪士尼门票已单独计入，纪念品预算建议另设，不和日常吃喝混在一起。</p>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <div class="section-en">Daily Schedule</div>
+    <div class="section-cn">时间日程</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Date / 日期</th>
+        <th>Plan / 行程</th>
+        <th>Transport / 交通</th>
+        <th>Stay / 住宿</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-date">Mon 13 Jul<span class="td-date-cn">7月13日 周一</span></td>
+        <td><span class="td-event">Arrive Osaka · 抵达大阪</span><span class="td-event-cn">成都双流经北京转机，20:30 抵达关西机场 KIX T1。</span></td>
+        <td>南海电铁 / Nankai Airport Express → 大阪市区</td>
+        <td><span class="stay-pill green">Royal Namba South</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Tue 14 Jul<span class="td-date-cn">7月14日 周二</span></td>
+        <td><span class="td-event">Nara day trip · 奈良一日往返</span><span class="td-event-cn">奈良公园、东大寺周边，晚上回大阪。</span></td>
+        <td>近铁奈良线 / Kintetsu Nara Line</td>
+        <td><span class="stay-pill green">Royal Namba South</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Wed 15 Jul<span class="td-date-cn">7月15日 周三</span></td>
+        <td><span class="td-event">Osaka → Matsue · 大阪前往松江</span><span class="td-event-cn">上午高速巴士，下午抵达松江。</span></td>
+        <td>已购电子票：09:00 大阪（阪急三番街）→ 13:37 JR松江站，预约号 06192048581，01号车 1B/1A/2B/2A</td>
+        <td><span class="stay-pill purple">New Matsue City Hotel</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Thu–Sat 16–18 Jul<span class="td-date-cn">7月16–18日</span></td>
+        <td><span class="td-event">Matsue conference block · 松江会议段</span><span class="td-event-cn">7/16 会议主日含合照、poster 与 16:00–16:15 口头现场汇报；7/17 可按体力早起执行个人支线，17:30 前回 Kunibiki Messe 集合参加 banquet；7/18 必须参加官方松江一日游，结束后按老板/团队安排或体力选择宍道湖夕阳/出云傍晚打卡。</span></td>
+        <td>会议巴士 / 本地 JR / 一畑电车 / 松江市区步行与短程交通</td>
+        <td><span class="stay-pill purple">New Matsue City Hotel</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Sun 19 Jul<span class="td-date-cn">7月19日 周日</span></td>
+        <td><span class="td-event">Matsue → Osaka · 返回大阪</span><span class="td-event-cn">早班高速巴士回大阪，中午到达梅田，下午大阪市区。</span></td>
+        <td>已购电子票：07:25 JR松江站 → 12:02 大阪（阪急三番街），预约号 06192050021，01号车 2B/3B/6B</td>
+        <td><span class="stay-pill green">九条南日式民宿</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Mon 20 Jul<span class="td-date-cn">7月20日 周一</span></td>
+        <td><span class="td-event">Universal Studios Japan + Osaka night · 环球影城与大阪夜景</span><span class="td-event-cn">全天 USJ；出园后若体力允许，前往心斋桥/道顿堀夜景区域。DOTONBORI KUROFUNE 鳗鱼饭可作为晚餐/夜间备选，但需确认营业时间或提前订座。</span></td>
+        <td>九条 / 西九条 → Universal City；晚间 Universal City → 心斋桥/道顿堀 → 九条南</td>
+        <td><span class="stay-pill green">九条南日式民宿</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Tue 21 Jul<span class="td-date-cn">7月21日 周二</span></td>
+        <td><span class="td-event">Osaka → Kyoto + Kibune night · 大阪市区后前往京都贵船</span><span class="td-event-cn">上午/中午前补大阪城等大阪市区点，之后移动至京都四条乌丸入住。16:00 前出发前往贵船神社，乘坐风景较好的电车路线，约 17:30 到达，18:00 亮灯后视情况返程，19:00–20:00 回京都市中心晚餐。</span></td>
+        <td>大阪市内 → 阪急京都线 → 四条乌丸；京都市区 → 出町柳 → 叡山电车鞍马线 → 贵船口 → 京都巴士33路/步行 → 贵船神社</td>
+        <td><span class="stay-pill blue">Sotetsu Fresa Inn Kyoto-Shijokarasuma</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Wed 22 Jul<span class="td-date-cn">7月22日 周三</span></td>
+        <td><span class="td-event">Kyoto classic route · 京都经典市区线</span><span class="td-event-cn">早上打车到清水寺节省体力，随后走清水寺、二年坂三年坂、祇园、鸭川一线。下午永观堂作为弹性安排；傍晚前往伏见稻荷大社；夜晚继续在京都市中心活动。</span></td>
+        <td>早上打车到清水寺；其余以步行、京阪/地铁/巴士灵活组合为主</td>
+        <td><span class="stay-pill blue">Sotetsu Fresa Inn Kyoto-Shijokarasuma</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Thu 23 Jul<span class="td-date-cn">7月23日 周四</span></td>
+        <td><span class="td-event">Kyoto → Fuji → Tokyo · 京都经富士山到东京</span><span class="td-event-cn">当天为最复杂交通日，三段核心交通均已购票/订票：08:10 KODAMA 808 京都→三岛，11:20 三岛南口2号站台→河口湖，18:00 河口湖→东京站日本桥口。到站后处理行李并在富士山下/河口湖站周边轻量午饭，寿司郎回转寿司作为候选，下午只做轻量游览。</span></td>
+        <td>已购 KODAMA 808；已订 11:20 三岛→河口湖巴士；已订 18:00 河口湖→东京站日本桥口巴士</td>
+        <td><span class="stay-pill green">N+ Hotel Tokyo Nihonbashi</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Fri 24 Jul<span class="td-date-cn">7月24日 周五</span></td>
+        <td><span class="td-event">Tokyo city route · 东京市区日</span><span class="td-event-cn">日本桥酒店出发，浅草寺、晴空塔/押上、秋叶原午饭与短逛、银座轻打卡、新宿晚饭与歌舞伎町、涩谷夜景，最后到东京塔/赤羽桥/芝公园一带拍照后回酒店。</span></td>
+        <td>东京地铁 / JR / 都营地铁，Suica/ICOCA 为主；不安排付费观景台</td>
+        <td><span class="stay-pill green">N+ Hotel Tokyo Nihonbashi</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Sat 25 Jul<span class="td-date-cn">7月25日 周六</span></td>
+        <td><span class="td-event">Tokyo Disney two parks · 东京迪士尼两园</span><span class="td-event-cn">东京迪士尼已确定为两园方案，并已完成购票。当天按两园执行，具体游玩顺序、Priority Pass / Premier Access 与夜间项目后续根据官方 app 和入园规则细化。</span></td>
+        <td>日本桥 → 舞浜站；两园之间以 Disney Resort Line / 现场规则为准</td>
+        <td><span class="stay-pill green">N+ Hotel Tokyo Nihonbashi</span></td>
+      </tr>
+      <tr>
+        <td class="td-date">Sun 26 Jul<span class="td-date-cn">7月26日 周日</span></td>
+        <td><span class="td-event">Tokyo → Airports · 东京分流去机场</span><span class="td-event-cn">四人分流：3人去羽田 HND，1人去成田 NRT。两组均从日本桥 / T-CAT 逻辑出发。</span></td>
+        <td>HND组（3人）：T-CAT → 羽田；NRT组（1人）：T-CAT → 成田；均预留备选铁路方案</td>
+        <td><span class="stay-pill amber">Flight day</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-head">
+    <div class="section-en">Accommodation</div>
+    <div class="section-cn">住宿整理</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card hotel-card">
+      <div class="hotel-name">Royal Namba South · 大阪第一段</div>
+      <div class="hotel-meta">7/13–7/15 · 2 nights · 4 people<br>1-chome-4-5 Ebisuhonmachi, Naniwa-ku, Osaka</div>
+      <div class="price-tag">个人承担：€40.94，约 ¥322 / 人</div>
+    </div>
+    <div class="card hotel-card">
+      <div class="hotel-name">New Matsue City Hotel · 松江段</div>
+      <div class="hotel-meta">7/15–7/19 · 4 nights · 4 people<br>Nishichamachi 40-1, Matsue, Shimane</div>
+      <div class="price-tag">老板支付 / 报销，不计入个人住宿支出</div>
+    </div>
+    <div class="card hotel-card">
+      <div class="hotel-name">九条南日式民宿 · 大阪第二段</div>
+      <div class="hotel-meta">7/19–7/21 · 2 nights · 4 people<br>大阪市西区九条南 3-8-2</div>
+      <div class="price-tag">个人承担：¥247.48 RMB，约 €31.5 / 人</div>
+    </div>
+    <div class="card hotel-card">
+      <div class="hotel-name">Sotetsu Fresa Inn Kyoto-Shijokarasuma · 京都段</div>
+      <div class="hotel-meta">7/21–7/23 · 2 nights · 2 twin rooms<br>Shimogyo Ward, Dojishacho, 160, Kyoto</div>
+      <div class="price-tag">个人承担：¥390.30 RMB，约 €49.6 / 人</div>
+    </div>
+    <div class="card hotel-card">
+      <div class="hotel-name">N+ Hotel Tokyo Nihonbashi · 东京段</div>
+      <div class="hotel-meta">7/23–7/26 · 3 nights · 2 twin rooms<br>Nihonbashi Hamacho, 2-23-8, Chuo-ku, Tokyo</div>
+      <div class="price-tag">个人承担：¥775.20 RMB，约 €98.5 / 人</div>
+    </div>
+    <div class="card hotel-card">
+      <div class="hotel-name">Accommodation total · 住宿合计</div>
+      <div class="hotel-meta">不含松江段，覆盖个人承担的 9 晚住宿。</div>
+      <div class="price-tag">约 ¥1,730–1,735 RMB / 人，约 €220 / 人</div>
+    </div>
+  </div>
+
+  <div class="section-head">
+    <div class="section-en">Transport Framework</div>
+    <div class="section-cn">交通框架</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card route-card">
+      <div class="card-title"><div class="card-title-en">Kansai Airport → Osaka</div><div class="card-title-cn">关西机场到大阪</div></div>
+      <div class="route-meta">
+        <div class="label">Mode</div><div class="value">南海电铁 Nankai Airport Express</div>
+        <div class="label">Budget</div><div class="value"><strong>¥930–1100 JPY / 人</strong></div>
+        <div class="label">Ticket</div><div class="value">现场刷 IC 卡；若闸机支持 Visa touch 可尝试 Apple Pay Visa</div>
+      </div>
+    </div>
+    <div class="card route-card">
+      <div class="card-title"><div class="card-title-en">Osaka ⇄ Nara</div><div class="card-title-cn">大阪奈良往返</div></div>
+      <div class="route-meta">
+        <div class="label">Mode</div><div class="value">近铁奈良线 Kintetsu Nara Line</div>
+        <div class="label">Budget</div><div class="value"><strong>约 ¥1360 JPY / 人往返</strong></div>
+        <div class="label">Ticket</div><div class="value">优先找 Visa touch 闸机尝试 Apple Pay Visa；失败则刷 IC 卡。不要坐 Limited Express 特急</div>
+      </div>
+    </div>
+    <div class="card route-card">
+      <div class="card-title"><div class="card-title-en">Osaka ⇄ Matsue</div><div class="card-title-cn">大阪松江高速巴士｜已购票冻结</div></div>
+      <div class="route-meta">
+        <div class="label">7/15 去程</div><div class="value">已购电子票：预约号 06192048581；出雲・松江－大阪线，09:00 大阪（阪急三番街）→ 13:37 JR松江站；一畑巴士；01号车，座位 1B/1A/2B/2A；4人，总价 ¥20,400</div>
+        <div class="label">7/19 回程</div><div class="value">已购电子票：预约号 06192050021；出雲・松江－大阪线，07:25 JR松江站 → 12:02 大阪（阪急三番街）；阪急观光巴士；01号车，座位 2B/3B/6B；3人，总价 ¥18,000</div>
+        <div class="label">乘车凭证</div><div class="value">两段均为 E-ticket / Confirmation e-mail，出发前保存手机票或截图。7/19 回程票显示为3人票，若第4人同日同行需单独确认其票据。</div>
+      </div>
+    </div>
+    <div class="card route-card">
+      <div class="card-title"><div class="card-title-en">Osaka → Kyoto</div><div class="card-title-cn">大阪到京都</div></div>
+      <div class="route-meta">
+        <div class="label">Mode</div><div class="value">阪急京都线 Hankyu Kyoto Line</div>
+        <div class="label">Budget</div><div class="value"><strong>约 ¥410 JPY / 人</strong></div>
+        <div class="label">Ticket</div><div class="value">大阪梅田 → 乌丸；刷 IC 卡或 Visa touch 视现场支持</div>
+      </div>
+    </div>
+    <div class="card route-card">
+      <div class="card-title"><div class="card-title-en">Kyoto → Mishima → Kawaguchiko → Tokyo</div><div class="card-title-cn">7月23日：京都经三岛、河口湖到东京｜已购票冻结</div></div>
+      <div class="route-meta">
+        <div class="label">京都→三岛</div><div class="value">已购 Smart EX / Hayatoku-7：KODAMA 808，08:10 京都 → 10:49 三岛，12号车，座位 12D/12E/13D/13E，Reservation number 2000。每个座位 QR-Ticket 不同，需提前分别截图或保存。</div>
+        <div class="label">三岛→河口湖</div><div class="value">已订 Mishima/Kawaguchiko Liner Bus：11:20 三岛站南口2号站台 → 12:50 河口湖站，预约号 WR0000394401，BUS 0009，座位 02B/01A/01B/02A。上车需出示 QR code。</div>
+        <div class="label">河口湖→东京</div><div class="value">已订东京-富士五湖线34便：18:00 河口湖站 → 20:05 东京站日本桥口，01号车，座位 1B/1A/2B/2A，预约号 1020253626 / 062505010661，车内带厕所，需要手机乘车票。</div>
+        <div class="label">预算</div><div class="value">新干线 ¥42,640 / 4人；三岛→河口湖巴士 ¥2,500 JPY / 人；河口湖→东京巴士 ¥9,200 / 4人。</div>
+      </div>
+    </div>
+    <div class="card route-card">
+      <div class="card-title"><div class="card-title-en">Tokyo → Airports</div><div class="card-title-cn">7月26日：东京到机场分流</div></div>
+      <div class="route-meta">
+        <div class="label">羽田 HND</div><div class="value">3人：N+ Hotel Tokyo Nihonbashi → T-CAT → 羽田机场，机场大巴约 ¥1000 JPY / 人。适合带行李，出发前一天再按航班时间确认班次。</div>
+        <div class="label">成田 NRT</div><div class="value">1人：N+ Hotel Tokyo Nihonbashi → T-CAT → 成田机场，机场大巴约 ¥3100 JPY / 人。成田距离较远，需按航班时间提前倒推。</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <div class="section-head">
+    <div class="section-en">Daily Detail Modules</div>
+    <div class="section-cn">每日细化与占位模块 · 按时间顺序</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">14 Jul · Osaka ⇄ Nara</div>
+        <div class="focus-sub">7月14日周二 · 大阪住处出发，近铁奈良线往返。目标是奈良公园、东大寺周边，晚上回大阪。</div>
+      </div>
+      <div class="focus-badge">Day Trip · 一日往返</div>
+    </div>
+
+    <div class="step-list">
+      <div class="route-step">
+        <div class="step-time">Morning<span>Hotel → Osaka-Namba</span></div>
+        <div class="step-main"><strong>Royal Namba South → 大阪难波 / Osaka-Namba</strong><br>从住宿出发前往近铁大阪难波站。根据当天实际出门点，可步行、地铁短程或转乘到大阪难波。若使用 Osaka Metro，现场可看是否有 Visa touch 闸机；没有则刷 IC 卡。</div>
+        <div class="step-cost"><strong>市内短程</strong><br>约 ¥200–300 JPY / 人。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">Outbound<span>Kintetsu Nara Line</span></div>
+        <div class="step-main"><strong>大阪难波 → 近铁奈良</strong><br>乘近铁奈良线，选择急行或快速急行即可。不要买 Limited Express 特急，因为特急需要额外特急券，而且对这段行程意义不大。到近铁奈良站后步行进入奈良公园、东大寺一带。</div>
+        <div class="step-cost"><strong>约 ¥680 JPY / 人</strong><br>单程。优先尝试 Apple Pay Visa touch，失败则刷 IC 卡。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">Daytime<span>Nara walking route</span></div>
+        <div class="step-main"><strong>近铁奈良站 → 奈良公园 → 东大寺 / 春日大社周边</strong><br>奈良当天以步行为主。美食候选可放志津香釜饭与中谷堂手打麻薯，具体按排队和路线现场决定。</div>
+        <div class="step-cost"><strong>现场预算</strong><br>餐饮、门票、小吃另计。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">Evening<span>Return</span></div>
+        <div class="step-main"><strong>近铁奈良 → 大阪难波 → Royal Namba South</strong><br>回程继续乘近铁奈良线返回大阪难波，再回住宿。注意进出站必须使用同一种支付方式：若去程进站刷 Apple Pay Visa，出站也必须刷同一张 Apple Pay Visa；不要混刷 Suica/ICOCA。</div>
+        <div class="step-cost"><strong>往返约 ¥1,360 JPY / 人</strong><br>不含大阪市内短程。</div>
+      </div>
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk-card"><strong>支付策略</strong>近铁奈良线可优先找 Visa touch / タッチ決済 闸机，可能触发 Apple Pay Visa 返现；没有标识就刷 IC 卡。</div>
+      <div class="risk-card"><strong>线路原则</strong>选近铁而不是 JR，因为近铁奈良站离奈良公园更近。</div>
+      <div class="risk-card"><strong>预算口径</strong>交通核心约 ¥1,360 JPY / 人往返；大阪市内接驳另加少量。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">15 Jul · Osaka → Matsue</div>
+        <div class="focus-sub">7月15日周三 · 从大阪第一段住宿退房，前往大阪梅田阪急三番街高速巴士站，乘已购电子票的出雲・松江－大阪线前往松江。</div>
+      </div>
+      <div class="focus-badge">Highway Bus · 已购票</div>
+    </div>
+
+    <div class="step-list">
+      <div class="route-step">
+        <div class="step-time">07:50–08:00<span>Hotel departure</span></div>
+        <div class="step-main"><strong>Royal Namba South → 大阪梅田 / 阪急三番街高速巴士站</strong><br>带行李出发，建议不要晚于 08:00 离开住宿。路线可用大阪地铁或短程转乘到梅田，目标是阪急三番街高速巴士站。到站后先确认上车口、上厕所、准备水和简单早餐。</div>
+        <div class="step-cost"><strong>市内短程</strong><br>约 ¥250–400 JPY / 人。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">09:00–13:37<span>Kunibiki-go</span></div>
+        <div class="step-main"><strong>大阪梅田 → JR松江站｜已购电子票</strong><br>出雲・松江－大阪线 / Izumo-Matsue-Osaka Lines。预约号 06192048581，乘车人 4名，男性2名、女性2名；运营公司为一畑巴士 Ichibata Bus Co., Ltd.。上车点为大阪（阪急三番街）/ Osaka (Hankyu Sanban Gai)，下车点为 JR松江站。座位为 01号车 1B、1A、2B、2A。车程较长，上车前务必上厕所，并准备水、零食、充电宝和耳机。</div>
+        <div class="step-cost"><strong>总价 ¥20,400 JPY / 4人</strong><br>后续报销；出发前保存 E-ticket / Confirmation e-mail 或手机票截图。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">13:37 onward<span>Matsue arrival</span></div>
+        <div class="step-main"><strong>JR松江站 → New Matsue City Hotel</strong><br>抵达松江后前往酒店。可根据行李和天气选择步行、本地巴士或出租车。松江本地交通不一定每处都支持 IC 卡或 Visa touch，建议准备现金。</div>
+        <div class="step-cost"><strong>现场预算</strong><br>短程交通按实际 A。</div>
+      </div>
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk-card"><strong>票据状态</strong>7/15 大阪→松江已购票，预约号 06192048581，座位 1B/1A/2B/2A。</div>
+      <div class="risk-card"><strong>报销口径</strong>大阪⇄松江两段大巴后续报销，因此个人最终预算可不计入，但需要先准备垫付现金流。</div>
+      <div class="risk-card"><strong>当天原则</strong>这天不安排大阪上午游玩，核心任务是准时上车和顺利抵达松江。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">16–18 Jul · Matsue Conference + Flexible Side Trips</div>
+        <div class="focus-sub">7月16–18日 · 松江会议段已按实际日程更新。核心原则：会议优先，远程支线只放在 7/17 早上，7/18 官方活动后保持弹性。</div>
+      </div>
+      <div class="focus-badge">Updated · 会议优先</div>
+    </div>
+    <div class="option-grid">
+      <div class="option-card warn"><div class="option-title">7/16 · 会议主日，不安排远程支线</div><div class="option-meta">当天包含开幕、合照、poster 展示，以及 16:30 口头现场汇报。完成汇报后以吃饭、休息、宍道湖轻量散步为主，不再安排出云、足立或柯南小镇。</div></div>
+      <div class="option-card primary"><div class="option-title">7/17 · 唯一远程支线窗口</div><div class="option-meta">若第一天汇报后状态尚可，可早起执行个人支线。候选为柯南小镇 / 出云大社 / 足立美术馆三选一。因 17:30 需在 Kunibiki Messe 入口集合参加 Awarding Banquet，需 16:00 左右回到松江。</div></div>
+      <div class="option-card"><div class="option-title">7/18 · 官方松江一日游</div><div class="option-meta">9:00 Kunibiki Messe 出发，松江城、堀川游船、午餐、Matsue Vogel Park，15:45 到 JR Matsue Station。结束后不设硬性行程，按老板/团队安排或体力选择宍道湖夕阳、出云傍晚打卡或直接休息整理行李。</div></div>
+    </div>
+    <div class="step-list" style="margin-top:14px;">
+      <div class="route-step"><div class="step-time">17 Jul optional<span>Conan Town window</span></div><div class="step-main"><strong>松江 → 由良 / 柯南小镇 → 松江</strong><br>仅在体力允许时执行。理想窗口为 7:24 左右松江出发，9:21 左右到由良，打卡柯南站、柯南大道、米花商店街和青山刚昌故乡馆；13:38 左右由良返程，15:30–16:00 回松江。</div><div class="step-cost"><strong>约 ¥3,400–5,700 JPY / 人</strong><br>含往返交通粗估与故乡馆门票，购物另计。</div></div>
+      <div class="route-step"><div class="step-time">17 Jul evening<span>Awarding Banquet</span></div><div class="step-main"><strong>Kunibiki Messe → 由志园 / Daikonshima</strong><br>17:30 在 Kunibiki Messe 入口集合，17:40 乘巴士出发；18:15–18:45 由志园古典庭园参观，18:45–19:00 颁奖仪式，19:00–20:30 日式传统表演与餐食。</div><div class="step-cost"><strong>会议安排</strong><br>按会议组织统一行动。</div></div>
+      <div class="route-step"><div class="step-time">18 Jul after tour<span>Flexible</span></div><div class="step-main"><strong>官方 tour 后弹性安排</strong><br>若老板或团队有后续安排，优先跟随团队，可考虑出云大社傍晚参拜；若无统一安排或体力不足，则回酒店休息，傍晚前往宍道湖 / 岛根县立美术馆湖边 / 白潟公园看夕阳，晚饭后整理行李。</div><div class="step-cost"><strong>现场决定</strong><br>不作为硬性预算。</div></div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">19 Jul · Matsue → Osaka</div>
+        <div class="focus-sub">7月19日周日 · 从松江早班高速巴士返回大阪梅田，中午到达后转去九条南日式民宿。回程电子票已购，当前票面显示为3人。</div>
+      </div>
+      <div class="focus-badge">Highway Bus · 已购票</div>
+    </div>
+
+    <div class="step-list">
+      <div class="route-step">
+        <div class="step-time">06:40–06:55<span>Hotel departure</span></div>
+        <div class="step-main"><strong>New Matsue City Hotel → JR松江站</strong><br>早班车时间较早，建议提前退房或前一晚整理好行李。早上直接前往 JR 松江站巴士上车点，留出找站台和上厕所的时间。</div>
+        <div class="step-cost"><strong>短程交通</strong><br>步行 / 巴士 / 出租车视实际决定。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">07:25–12:02<span>Kunibiki-go</span></div>
+        <div class="step-main"><strong>JR松江站 → 大阪梅田｜已购电子票</strong><br>出雲・松江－大阪线 / Izumo-Matsue-Osaka Lines 返回大阪。预约号 06192050021，乘车人 3名，男性1名、女性2名；运营公司为阪急观光巴士 Hankyu Kanko Bus Co., Ltd.。上车点为 JR松江站，下车点为大阪（阪急三番街）/ Osaka (Hankyu Sanban Gai)。座位为 01号车 2B、3B、6B。车程较长，早餐可提前买好，上车前先去厕所。</div>
+        <div class="step-cost"><strong>总价 ¥18,000 JPY / 3人</strong><br>后续报销；出发前保存 E-ticket / Confirmation e-mail 或手机票截图。若第4人同日同行，需确认其是否另有单独票据。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">12:02 onward<span>Osaka arrival</span></div>
+        <div class="step-main"><strong>大阪梅田 → 九条南日式民宿</strong><br>中午到梅田后前往大阪第二段住宿。可用大阪地铁/JR组合，若行李多且四人同行，也可短程打车分摊。下午可安排心斋桥、道顿堀、梅田或大阪市区轻量活动。</div>
+        <div class="step-cost"><strong>市内转移</strong><br>刷 IC 卡；若多点移动再考虑大阪地铁一日券。</div>
+      </div>
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk-card"><strong>票据状态</strong>7/19 松江→大阪已购票，预约号 06192050021，座位 2B/3B/6B；票面为3人票，需确认第4人安排。</div>
+      <div class="risk-card"><strong>早班提醒</strong>7:25 发车，不能把退房、早餐和找站台都压到最后十分钟。</div>
+      <div class="risk-card"><strong>大阪下午</strong>到达后不要安排太重，第二天是 USJ，下午适合住宿整理、吃饭和市区轻量游。</div>
+      <div class="risk-card"><strong>交通卡</strong>大阪市内转移优先 IC 卡；若当天坐 Osaka Metro 3–4 次以上，再考虑 Enjoy Eco Card。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">20 Jul · Universal Studios Japan + Osaka Night</div>
+        <div class="focus-sub">7月20日周一 · 全天 USJ，出园后按体力前往心斋桥 / 道顿堀夜景区域。鳗鱼饭黑船作为可选晚餐点。</div>
+      </div>
+      <div class="focus-badge">Theme Park + Night Walk</div>
+    </div>
+    <div class="step-list">
+      <div class="route-step"><div class="step-time">Morning<span>Hotel → USJ</span></div><div class="step-main"><strong>九条南日式民宿 → 西九条 / Universal City → USJ</strong><br>以 JR 梦咲线 / 樱岛线进入 Universal City 为主。早上建议早点出门，避免开园前排队和换乘压力。</div><div class="step-cost"><strong>约 ¥200–400 JPY / 人 / 单程</strong><br>交通刷 IC 卡。</div></div>
+      <div class="route-step"><div class="step-time">Daytime<span>USJ</span></div><div class="step-main"><strong>全天园区游玩</strong><br>快速通道暂不写入基础预算。餐饮、储物柜、纪念品另设预算，纪念品不和普通吃喝混在一起。</div><div class="step-cost"><strong>乐园消费另计</strong><br>USJ 门票已按预算单列。</div></div>
+      <div class="route-step"><div class="step-time">Evening<span>USJ → Shinsaibashi / Dotonbori</span></div><div class="step-main"><strong>环球结束后前往心斋桥 / 道顿堀</strong><br>若体力允许，出园后去心斋桥、道顿堀夜景区域。DOTONBORI KUROFUNE / 道頓堀 黒船可作为鳗鱼饭候选，但需确认营业时间或提前订较晚座位。若过累则直接回住宿休息。</div><div class="step-cost"><strong>现场决定</strong><br>晚餐与交通按实际 A。</div></div>
+    </div>
+    <div class="risk-grid">
+      <div class="risk-card"><strong>体力优先</strong>USJ 当天不要把心斋桥夜景写成硬任务，走得动就去，走不动就取消。</div>
+      <div class="risk-card"><strong>餐厅风险</strong>黑船适合道顿堀夜线，但受出园时间和营业时间影响，建议作为优先备选而非唯一晚餐。</div>
+      <div class="risk-card"><strong>次日提醒</strong>7/21 还要大阪市区与京都贵船，20日晚不要拖到太晚整理行李。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">21 Jul · Osaka City → Kyoto → Kibune Shrine</div>
+        <div class="focus-sub">7月21日周二 · 上午大阪市区轻量补点，下午移动京都。16:00 前出发前往贵船神社，主打傍晚电车路线与夜灯氛围。</div>
+      </div>
+      <div class="focus-badge">Frozen · 京都夜线</div>
+    </div>
+    <div class="step-list">
+      <div class="route-step"><div class="step-time">Morning<span>Osaka light route</span></div><div class="step-main"><strong>九条南日式民宿 → 大阪城等市区点</strong><br>USJ 次日不要安排过重。可选择大阪城、公园周边或梅田/心斋桥轻量补点，按体力决定。若前一晚较累，可压缩为大阪城外观或直接晚些出发去京都。</div><div class="step-cost"><strong>市内短程</strong><br>刷 IC 卡；行李以寄存或住宿安排为准。</div></div>
+      <div class="route-step"><div class="step-time">Midday / Afternoon<span>Osaka → Kyoto</span></div><div class="step-main"><strong>大阪梅田 → 乌丸 / 四条乌丸</strong><br>乘阪急京都线到乌丸，入住 Sotetsu Fresa Inn Kyoto-Shijokarasuma。乌丸 / 四条即酒店区域，不需要绕去京都站。</div><div class="step-cost"><strong>约 ¥410 JPY / 人</strong><br>刷 IC 卡；现场可看是否支持 Visa touch。</div></div>
+      <div class="route-step"><div class="step-time">Before 16:00<span>Kyoto → Kibune</span></div><div class="step-main"><strong>四条乌丸附近 → 贵船神社</strong><br>16:00 前从京都市区出发，乘坐风景较好的贵船线，整体约 1.5 小时，预计 17:30 左右抵达贵船。推荐交通逻辑为：四条乌丸附近先前往出町柳站，然后乘叡山电车鞍马线至贵船口站；贵船口站外换乘京都巴士 33 路前往贵船，或按体力选择步行上山。18:00 亮灯后根据现场时间与体力决定停留长度，返程按同一路线回出町柳，再转回四条/河原町等市中心区域晚餐。</div><div class="step-cost"><strong>本地交通另计</strong><br>四条乌丸 → 出町柳接驳；出町柳 → 贵船口为叡山电车；贵船口 → 贵船为京都巴士 33 路或步行。进出站注意同一张 IC 卡，不要混刷。</div></div>
+      <div class="route-step"><div class="step-time">19:00–20:00<span>Return & dinner</span></div><div class="step-main"><strong>贵船 → 京都市中心晚餐</strong><br>预计 19:00–20:00 回到京都市中心热闹区域，晚餐以四条河原町、祇园或酒店附近为主。当天不再安排重景点。</div><div class="step-cost"><strong>晚餐预算另计</strong><br>按现场餐厅决定。</div></div>
+    </div>
+    <div class="risk-grid">
+      <div class="risk-card"><strong>时间底线</strong>16:00 前必须从京都市区出发，否则贵船夜灯体验会被压缩。</div>
+      <div class="risk-card"><strong>体力调整</strong>大阪上午可随时缩短，优先保证贵船线。</div>
+      <div class="risk-card"><strong>晚餐策略</strong>贵船回程后在京都市中心吃，不在远处硬找餐厅。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">22 Jul · Kyoto Classic Route</div>
+        <div class="focus-sub">7月22日周三 · 京都完整游玩日。清水寺打车起步，永观堂为弹性项，伏见稻荷为傍晚固定方向。</div>
+      </div>
+      <div class="focus-badge">Frozen · 经典市区线</div>
+    </div>
+    <div class="step-list">
+      <div class="route-step"><div class="step-time">Morning<span>Taxi start</span></div><div class="step-main"><strong>酒店 → 清水寺</strong><br>早上直接打车到清水寺，以节省体力和避免一早公交换乘压力。清水寺之后沿二年坂三年坂慢慢下行。</div><div class="step-cost"><strong>打车分摊</strong><br>四人分摊，按现场费用 A。</div></div>
+      <div class="route-step"><div class="step-time">Late morning<span>Kiyomizu → Gion</span></div><div class="step-main"><strong>清水寺 → 二年坂三年坂 → 八坂 / 祇园 / 鸭川</strong><br>这段作为京都经典市区主线，步行为主。午餐候选可放祇园附近的鳗鱼饭或河原町/祇园一带餐厅。</div><div class="step-cost"><strong>步行主线</strong><br>餐饮另计。</div></div>
+      <div class="route-step"><div class="step-time">Afternoon<span>Eikando optional</span></div><div class="step-main"><strong>永观堂作为弹性安排</strong><br>若天气、体力和时间允许，下午加入永观堂；若当天过热、排队或步行过多，则直接留在祇园/鸭川/河原町区域休息或咖啡。</div><div class="step-cost"><strong>弹性项</strong><br>不是硬性景点。</div></div>
+      <div class="route-step"><div class="step-time">Evening<span>Fushimi Inari</span></div><div class="step-main"><strong>傍晚前往伏见稻荷大社</strong><br>伏见稻荷是当天后段明确方向，不是和永观堂并列的弹性项。傍晚人流相对缓和，适合拍鸟居和轻量上行，不必爬完整座山。</div><div class="step-cost"><strong>交通刷卡</strong><br>京阪 / JR / 地铁组合按当前位置决定。</div></div>
+      <div class="route-step"><div class="step-time">Night<span>Kyoto city</span></div><div class="step-main"><strong>回京都市中心活动</strong><br>夜晚回四条河原町、鸭川或酒店附近吃饭与散步。第二天 7/23 是京都→三岛→河口湖→东京大交通日，晚上不宜过晚。</div><div class="step-cost"><strong>晚餐另计</strong><br>按现场选择。</div></div>
+    </div>
+    <div class="risk-grid">
+      <div class="risk-card"><strong>已冻结</strong>弹性的是永观堂，不是伏见稻荷。</div>
+      <div class="risk-card"><strong>体力策略</strong>早上打车到清水寺是为了把体力留给整天步行。</div>
+      <div class="risk-card"><strong>餐厅策略</strong>祇园鳗鱼饭优先考虑顺路程度，排队过长则换河原町/四条附近。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">23 Jul · Kyoto → Mishima → Kawaguchiko → Tokyo</div>
+        <div class="focus-sub">7月23日周四 · 本行程交通强度最高的一天。京都→三岛新干线、三岛→河口湖巴士、河口湖→东京巴士均已购票/订票，按已冻结车次执行。</div>
+      </div>
+      <div class="focus-badge">Frozen Plan · 已冻结方案</div>
+    </div>
+
+    <div class="step-list">
+      <div class="route-step">
+        <div class="step-time">07:15–07:30<span>Hotel departure</span></div>
+        <div class="step-main"><strong>相铁 FRESA INN 京都四条乌丸 → 四条站 → 京都站</strong><br>从酒店出发，步行到四条站，乘京都市营地铁乌丸线到京都站。当天带行李，建议不要卡点，进站后先确认新干线乘车口。</div>
+        <div class="step-cost"><strong>约 ¥220 JPY / 人</strong><br>刷 IC 卡即可。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">08:10–10:49<span>已购新干线</span></div>
+        <div class="step-main"><strong>京都站 → 三岛站 Mishima</strong><br>已购买 Smart EX / Hayatoku-7 早鸟票。2026年7月23日乘坐 <em>KODAMA 808</em>，京都站 08:10 出发，三岛站 10:49 到达。12号车，座位 12D、12E、13D、13E。页面显示 Reservation number 2000。每个座位的 QR-Ticket 不同，需提前分别截图或保存。</div>
+        <div class="step-cost"><strong>¥42,640 JPY / 4人</strong><br>约 ¥10,660 JPY / 人，固定车次与座位。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">10:49–11:20<span>换乘缓冲</span></div>
+        <div class="step-main"><strong>三岛站换乘 · 南口 2号站台</strong><br>新干线到达三岛后直接前往 <em>Mishima Station South Gate（track No.2）/ 三岛站南口2号站台</em>。换乘时间约 31 分钟，不要在站内久停；优先找站台，确认上车口后再上厕所或买水。</div>
+        <div class="step-cost"><strong>无额外预算</strong><br>注意不要走到北口。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">11:20–12:50<span>已订巴士</span></div>
+        <div class="step-main"><strong>三岛站南口2号站台 → 河口湖站</strong><br>已订 Mishima/Kawaguchiko Liner Bus。Reservation number：WR0000394401；BUS Number：0009；票种：WEB Discount Fare。上车地点为 Mishima Station South Gate（track No.2）/ 三岛站南口2号站台，11:20 出发，12:50 到达 Kawaguchiko Station / 河口湖站。座位为 Car No.1 1st deck：02B、01A、01B、02A。车上有 Wi‑Fi，乘车需出示 QR code。</div>
+        <div class="step-cost"><strong>¥2,500 JPY / 人</strong><br>已订票，提前准备 QR code。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">12:50–17:40<span>河口湖轻量停留</span></div>
+        <div class="step-main"><strong>河口湖轻量游览 + 寿司郎午饭候选</strong><br>到站后先处理行李寄存和午饭。午饭可考虑河口湖/富士山下的寿司郎回转寿司，作为便宜、稳定、适合四人同行的候选；若排队或绕路，则改为河口湖站周边简餐。下午不安排忍野八海或远距离多点联动，优先河口湖站周边、湖边散步、天上山缆车或一个视野点。核心原则是轻量停留，不把这天变成暴走。</div>
+        <div class="step-cost"><strong>现场预算</strong><br>寄存、寿司郎/午饭、短程交通另计。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">18:00–20:05<span>已订高速巴士</span></div>
+        <div class="step-main"><strong>河口湖站 → 东京站日本桥口</strong><br>已订高速バスドットコム WEB/モバイル乗車票。路线为东京-富士五湖线 34便，河口湖・富士山駅・富士急ハイランド → 东京，4列座，车内带厕所。高速バスドットコム预约号：1020253626；运营巴士公司预约号：062505010661；01号车，座位 1B、1A、2B、2A。7月23日 18:00 从河口湖站发车，20:05 预计到达东京站日本桥口（仅下车）。预计运营公司为富士急バス。</div>
+        <div class="step-cost"><strong>¥9,200 JPY / 4人</strong><br>约 ¥2,300 JPY / 人；需要手机乘车票。</div>
+      </div>
+
+      <div class="route-step">
+        <div class="step-time">20:05 后<span>东京到达</span></div>
+        <div class="step-main"><strong>东京站日本桥口 → N+ Hotel Tokyo Nihonbashi</strong><br>到东京后优先短程打车到酒店。当天已经经历新干线、大巴、河口湖停留和晚间进东京，4人带行李不建议再折腾复杂地铁换乘。</div>
+        <div class="step-cost"><strong>短程打车分摊</strong><br>现场按实际费用 A。</div>
+      </div>
+    </div>
+
+    <div class="risk-grid">
+      <div class="risk-card"><strong>已冻结交通</strong>三段核心交通均已购票/订票：KODAMA 808、三岛→河口湖巴士 0009、河口湖→东京 34便。</div>
+      <div class="risk-card"><strong>关键词</strong>三岛站南口2号站台、Kawaguchiko Station、东京站日本桥口。不要把山中湖当成终点。</div>
+      <div class="risk-card"><strong>当天原则</strong>三岛换乘只有约31分钟，河口湖只做轻量游览，晚上到东京后优先打车进酒店。</div>
+    </div>
+
+    <div class="cost-summary">
+      <div><strong>核心交通已购/已订：</strong>新干线 ¥42,640 / 4人；三岛→河口湖巴士 ¥2,500 / 人；河口湖→东京巴士 ¥9,200 / 4人。</div>
+      <div><strong>乘车凭证：</strong>新干线需保存4张不同 QR-Ticket；三岛→河口湖需出示 QR code；河口湖→东京需要手机乘车票。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">24 Jul · Tokyo City Day</div>
+        <div class="focus-sub">7月24日周五 · 白天东东京，下午银座轻打卡，晚上新宿、涩谷和东京塔夜景。不安排付费观景台。</div>
+      </div>
+      <div class="focus-badge">Frozen · 特种兵但不乱</div>
+    </div>
+    <div class="step-list">
+      <div class="route-step"><div class="step-time">09:00–10:45<span>Nihonbashi → Asakusa</span></div><div class="step-main"><strong>N+ Hotel Tokyo Nihonbashi → 浅草寺 / 雷门 / 仲见世通</strong><br>从日本桥浜町出发，上午先走浅草寺、雷门和仲见世通，作为东京传统街区开场。</div><div class="step-cost"><strong>刷 IC 卡</strong><br>地铁 / 都营线路按现场导航。</div></div>
+      <div class="route-step"><div class="step-time">11:00–12:00<span>Skytree / Oshiage</span></div><div class="step-main"><strong>晴空塔 / 押上 / Solamachi</strong><br>不上付费观景台，只做外观拍照和轻逛。若天气或体力一般，可压缩为拍照打卡。</div><div class="step-cost"><strong>免费为主</strong><br>购物与小吃另计。</div></div>
+      <div class="route-step"><div class="step-time">12:30–14:15<span>Akihabara lunch</span></div><div class="step-main"><strong>秋叶原午饭 + 短逛</strong><br>在秋叶原用餐，选择拉面、咖喱、定食、回转寿司或商场餐厅等不需要长排队的类型。饭后短时间打卡动漫、电器、扭蛋、周边店，不安排深逛。</div><div class="step-cost"><strong>午饭预算</strong><br>约 ¥1,000–2,000 JPY / 人起。</div></div>
+      <div class="route-step"><div class="step-time">14:45–15:30<span>Ginza check-in</span></div><div class="step-main"><strong>银座轻量打卡</strong><br>银座只作为“来过东京银座”的城市街景打卡，不承担购物和晚饭任务。重点看银座四丁目、和光钟楼、GINZA SIX 外观/街景。</div><div class="step-cost"><strong>免费为主</strong><br>购物自控。</div></div>
+      <div class="route-step"><div class="step-time">16:00–19:10<span>Shinjuku dinner + Kabukicho</span></div><div class="step-main"><strong>新宿晚饭 + 歌舞伎町游客路线</strong><br>先到新宿东口区域，17:30–18:30 左右安排正式晚饭，之后走歌舞伎町一番街、Godzilla Head 周边。只走游客主街区，不深入复杂小巷。</div><div class="step-cost"><strong>晚饭预算</strong><br>按餐厅现场决定。</div></div>
+      <div class="route-step"><div class="step-time">19:30–20:30<span>Shibuya night</span></div><div class="step-main"><strong>涩谷夜景</strong><br>把涩谷放到天黑后，打卡涩谷十字路口、八公像、中心街、街头大屏和霓虹氛围。不安排 Shibuya Sky 等付费观景台。</div><div class="step-cost"><strong>免费为主</strong><br>饮品/小食另计。</div></div>
+      <div class="route-step"><div class="step-time">21:00–21:45<span>Tokyo Tower photo</span></div><div class="step-main"><strong>东京塔 / 赤羽桥 / 芝公园 / 增上寺附近拍照</strong><br>最后转至东京塔区域拍夜景外观，然后返回日本桥浜町酒店。东京塔作为收尾，不登塔。</div><div class="step-cost"><strong>交通刷卡</strong><br>回酒店按现场路线。</div></div>
+    </div>
+    <div class="risk-grid">
+      <div class="risk-card"><strong>不上付费景点</strong>晴空塔、Shibuya Sky、东京塔均不作为付费观景台安排。</div>
+      <div class="risk-card"><strong>节奏控制</strong>秋叶原短逛，银座只打卡，新宿吃饭，涩谷看夜景，东京塔收尾。</div>
+      <div class="risk-card"><strong>第二天提醒</strong>7/25 是迪士尼两园，24日晚不要拖太晚。</div>
+    </div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">25 Jul · Tokyo Disney Two Parks</div>
+        <div class="focus-sub">7月25日周六 · 东京迪士尼已确定为两园方案，并已完成购票。当天不再保留“主 Land / 两园”二选一占位。</div>
+      </div>
+      <div class="focus-badge">Confirmed · 已购票</div>
+    </div>
+    <div class="step-list">
+      <div class="route-step"><div class="step-time">Morning<span>Hotel → Maihama</span></div><div class="step-main"><strong>N+ Hotel Tokyo Nihonbashi → 舞浜站 / Maihama</strong><br>从日本桥浜町一带出发，可经东京站或八丁堀换乘 JR 京叶线到舞浜。早上按开园时间和入园策略倒推。</div><div class="step-cost"><strong>约 ¥400–700 JPY / 人 / 单程</strong><br>刷 IC 卡。</div></div>
+      <div class="route-step"><div class="step-time">Daytime<span>Two parks</span></div><div class="step-main"><strong>Tokyo Disneyland + Tokyo DisneySea / 两园执行</strong><br>具体先后顺序、Priority Pass、Premier Access、移动与重新入园规则后续根据官方 App 与当日排队情况细化。纪念品预算建议单列。</div><div class="step-cost"><strong>门票已购</strong><br>餐饮、DPA、纪念品另计。</div></div>
+      <div class="route-step"><div class="step-time">Night<span>Return</span></div><div class="step-main"><strong>舞浜站 → 东京市区 / 酒店</strong><br>看夜间项目后回酒店。闭园后人流较大，优先跟随铁路动线回市区；非常疲惫时再考虑短程打车到更顺的换乘点。</div><div class="step-cost"><strong>刷 IC 卡 / 现场决定</strong><br>不要把打车作为基础预算。</div></div>
+    </div>
+    <div class="placeholder-note">后续需要补充：两园具体入园顺序、想玩的项目优先级、官方 App 抢票策略、是否购买 Premier Access、夜间项目取舍。</div>
+  </div>
+
+  <div class="focus-day">
+    <div class="focus-head">
+      <div>
+        <div class="focus-title">26 Jul · Tokyo Airport Split</div>
+        <div class="focus-sub">7月26日周日 · 四人分流去机场：3人去羽田 HND，1人去成田 NRT。住宿位置靠近 T-CAT，因此两组都优先保留机场大巴方案。</div>
+      </div>
+      <div class="focus-badge">HND ×3 / NRT ×1</div>
+    </div>
+    <div class="option-grid">
+      <div class="option-card primary"><div class="option-title">HND group · 3人去羽田</div><div class="option-meta"><span class="mini-tag">优先</span> N+ Hotel → T-CAT → Haneda Airport。机场大巴约 <strong>¥1000 JPY / 人</strong>，T-CAT 到羽田约 20 分钟级别，适合带行李。备选为京急 / 地铁组合。</div></div>
+      <div class="option-card"><div class="option-title">NRT group · 1人去成田</div><div class="option-meta"><span class="mini-tag">优先</span> N+ Hotel → T-CAT → Narita Airport。机场大巴约 <strong>¥3100 JPY / 人</strong>。成田较远，必须按航班时间提前倒推，宁可早到不要卡点。</div></div>
+    </div>
+    <div class="step-list" style="margin-top:14px;">
+      <div class="route-step"><div class="step-time">Before leaving<span>Hotel → T-CAT</span></div><div class="step-main"><strong>N+ Hotel Tokyo Nihonbashi → T-CAT</strong><br>酒店到 T-CAT 距离较近，可步行或短程打车。四人分流前，建议先在酒店确认行李、护照、机票和机场航站楼。</div><div class="step-cost"><strong>步行 / 短程打车</strong><br>按行李和天气决定。</div></div>
+      <div class="route-step"><div class="step-time">HND team<span>Haneda Airport</span></div><div class="step-main"><strong>T-CAT → 羽田机场</strong><br>适合 14:00 HND T3 出发组。建议提前一天查好 T-CAT 发车时刻，发车前 15–20 分钟到 T-CAT。</div><div class="step-cost"><strong>约 ¥1000 JPY / 人</strong><br>机场大巴。</div></div>
+      <div class="route-step"><div class="step-time">NRT team<span>Narita Airport</span></div><div class="step-main"><strong>T-CAT → 成田机场</strong><br>适合去成田的一人。成田距离远，需按具体航班时间倒推离开酒店时间，建议预留堵车和安检时间。</div><div class="step-cost"><strong>约 ¥3100 JPY / 人</strong><br>机场大巴。</div></div>
+    </div>
+    <div class="placeholder-note">后续需要补充：两组具体航班时间、航站楼、T-CAT 当天班次截图、是否提前线上购票。</div>
+  </div>
+
+  <div class="section-head">
+    <div class="section-en">Booking Checklist</div>
+    <div class="section-cn">待订与执行清单</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <ul class="todo-list">
+    <li><strong>已购/已订：</strong>京都→三岛新干线、三岛→河口湖 11:20 巴士、河口湖→东京 18:00 高速巴士、USJ 门票、东京迪士尼两园门票均已完成。后续重点是保存 QR-Ticket / QR code / 手机乘车票，并细化迪士尼 App 策略与两园顺序。</li>
+    <li><strong>7/23 交通凭证：</strong>新干线 KODAMA 808 需保存 4 张不同 QR-Ticket；三岛→河口湖巴士需出示 QR code；河口湖→东京巴士为手机乘车票，提前截图或离线保存。</li>
+    <li><strong>不建议购买：</strong>JR Kansai Mini Pass，目前路线以南海、近铁、阪急、高速巴士与新干线为主，JR Pass 不匹配。</li>
+    <li><strong>京都 7/22 已冻结：</strong>早上打车到清水寺，清水寺—二年坂三年坂—祇园/鸭川为主线；永观堂弹性，傍晚伏见稻荷固定方向。</li>
+    <li><strong>Apple Pay Visa 返现：</strong>南海、近铁、大阪地铁、阪急、阪神、部分东京私铁/都营可现场看 Visa touch 标识尝试；新干线和提前预约大巴不要指望。</li>
+    <li><strong>餐厅待确认：</strong>大阪黑船鳗鱼饭需查 7/20 晚营业时间或 TableCheck；京都鳗鱼饭在四代目菊川与成瀬之间按预算、路线与排队现场决定。</li>
+    <li><strong>机场分流：</strong>7/26 三人去 HND、一人去 NRT，均优先从 T-CAT / 日本桥逻辑出发；HND 暂记 ¥1000 JPY / 人，NRT 暂记 ¥3100 JPY / 人。</li>
+  </ul>
+
+  <div class="section-head">
+    <div class="section-en">Food List Placeholder</div>
+    <div class="section-cn">美食清单预留区</div>
+    <div class="section-rule"></div>
+  </div>
+
+  <div class="food-wrap">
+    <div class="food-city">
+      <h3>Osaka · 大阪</h3>
+      <div class="food-list">
+        <div class="food-item"><strong>DOTONBORI KUROFUNE / 道頓堀 黒船</strong><br>心斋桥/道顿堀附近鳗鱼饭。地址：大阪府大阪市中央区東心斎橋1丁目4-21。可通过 TableCheck 订座；推荐作为 7/20 USJ 后心斋桥夜线候选，需确认营业时间。</div>
+        <div class="food-item"><strong>千房 Chibo</strong><br>大阪烧，主选之一。</div>
+        <div class="food-item"><strong>福太郎 Fukutarou</strong><br>大阪烧 / 炒面，大阪本地朋友推荐，梅田店或本店待定。</div>
+        <div class="food-item"><strong>萬両 まんりょう</strong><br>心斋桥附近大阪烧/铁板烧备选，牛筋大阪烧、炒面、蒜香鸡腿肉。</div>
+        <div class="food-item"><strong>踊りだこ 道頓堀店</strong><br>章鱼烧备选。</div>
+        <div class="food-item"><strong>本家大たこ</strong><br>章鱼烧备选。</div>
+        <div class="food-item"><strong>博多串焼き バッテンよかとぉ</strong><br>美国村店，重点：猪舌根。</div>
+        <div class="food-item"><strong>宮田麺児</strong><br>心斋桥/道顿堀附近，主打蘸面 / つけ麺。</div>
+        <div class="food-item"><strong>黒毛和牛焼肉 道頓堀みつる</strong><br>心斋桥总店，黑毛和牛烧肉。</div>
+        <div class="food-item"><strong>らーめん亀王 道頓堀</strong><br>红辣番茄芝士面 + 溏心蛋。</div>
+        <div class="food-item"><strong>HARBS / Strawberry Mania / Nonkiya</strong><br>甜品与关东煮备选，按路线现场选择。</div>
+      </div>
+      <div class="food-note">大阪执行逻辑：7/20 USJ 后若体力允许去心斋桥/道顿堀夜景，黑船鳗鱼饭为优先备选；若太晚或过累，则取消餐厅硬安排。</div>
+    </div>
+    <div class="food-city">
+      <h3>Nara · 奈良</h3>
+      <div class="food-list">
+        <div class="food-item"><strong>志津香釜饭</strong><br>奈良釜饭，适合作为奈良一日游正餐候选。</div>
+        <div class="food-item"><strong>中谷堂 手打麻薯</strong><br>奈良经典小吃，适合路过打卡。</div>
+      </div>
+    </div>
+    <div class="food-city">
+      <h3>Kyoto · 京都</h3>
+      <div class="food-list">
+        <div class="food-item"><strong>うなぎ四代目菊川</strong><br>祇园附近鳗鱼饭，适合 7/22 清水寺—二年坂三年坂—祇园路线之后安排。预算较高，午餐/套餐大约 ¥3,980–6,180 JPY 量级，适合想吃一顿正式鳗鱼饭时选择。</div>
+        <div class="food-item"><strong>うなぎの成瀬 京都西院店 / 鰻の成瀬</strong><br>高性价比鳗鱼饭备选，约 80 RMB 量级。不是高端定位，适合低期待、预算友好的一餐；但西院位置需确认是否顺路。</div>
+        <div class="food-item"><strong>祇园 / 河原町临场餐厅</strong><br>若鳗鱼饭排队过长，可在祇园、四条河原町、鸭川附近现场改定食、荞麦面、甜品或咖啡休息。</div>
+      </div>
+      <div class="food-note">京都执行逻辑：四代目菊川路线最顺但预算高；成瀬更便宜但可能绕路。7/22 午餐优先看祇园附近排队与体力，永观堂为弹性，不为餐厅硬改主线。</div>
+    </div>
+    <div class="food-city">
+      <h3>Tokyo · 东京</h3>
+      <div class="food-list">
+        <div class="food-item"><strong>秋叶原午饭</strong><br>7/24 中午安排在秋叶原，优先拉面、咖喱、定食、回转寿司、商场餐厅等不长排队选项。</div>
+        <div class="food-item"><strong>新宿晚饭</strong><br>7/24 晚饭建议放在新宿，之后顺路走歌舞伎町，再去涩谷夜景和东京塔收尾。</div>
+        <div class="food-item"><strong>涩谷 / 东京塔不承担正餐</strong><br>涩谷主要看夜景，东京塔只做拍照收尾，避免晚饭过晚挤压夜景路线。</div>
+      </div>
+    </div>
+    <div class="food-city">
+      <h3>Fuji / Kawaguchiko · 河口湖</h3>
+      <div class="food-list">
+        <div class="food-item"><strong>寿司郎回转寿司 / Sushiro</strong><br>7/23 河口湖到站后午饭候选。定位为富士山下轻量午餐，适合四人同行、预算可控、选择稳定；若排队或交通绕路，则改为河口湖站周边简餐。</div>
+        <div class="food-item"><strong>河口湖站周边简餐</strong><br>作为寿司郎排队或时间不足时的备选，优先不绕路、不压缩返程巴士时间。</div>
+      </div>
+      <div class="food-note">
+        7/23 河口湖为轻量停留日，到站后先处理行李寄存和午饭。寿司郎作为优先候选，但不为餐厅牺牲河口湖返东京巴士和整体节奏。
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div>Japan Travel Plan · Updated Working Version · July 2026</div>
+  <div class="page-tag">UPDATED WORKING VERSION / 05</div>
+</div>
+
 </body>
 </html>
